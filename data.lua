@@ -1,4 +1,6 @@
-require("prototypes/salt")
+require("prototypes/gold")
+require("prototypes/silver")
+require("prototypes/cables")
 
 local util = require("data-util");
 
