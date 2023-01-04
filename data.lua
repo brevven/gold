@@ -1,6 +1,9 @@
+require("prototypes/gold-ore")
 require("prototypes/gold")
 require("prototypes/silver")
-require("prototypes/cables")
+require("prototypes/plpd")
+require("prototypes/rich-copper")
+require("cables")
 
 local util = require("data-util");
 
