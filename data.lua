@@ -1,8 +1,13 @@
 require("prototypes/gold-ore")
 require("prototypes/gold")
 require("prototypes/silver")
-require("prototypes/plpd")
+require("prototypes/platinum")
+require("prototypes/palladium")
 require("prototypes/rich-copper")
+require("prototypes/temperature-sensor")
+require("prototypes/mlcc")
+require("prototypes/cpu")
+require("prototypes/mainboard")
 require("cables")
 
 local util = require("data-util");
