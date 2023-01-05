@@ -7,6 +7,13 @@ if util.me.silver() then
       name = "silver-ore",
       icon = "__bzgold__/graphics/icons/silver-ore.png",
       icon_size = 128,
+      pictures = {
+        {filename="__bzgold__/graphics/icons/silver-ore.png", size=128, scale=0.125},
+        {filename="__bzgold__/graphics/icons/silver-ore-1.png", size=128, scale=0.125},
+        {filename="__bzgold__/graphics/icons/silver-ore-2.png", size=128, scale=0.125},
+        {filename="__bzgold__/graphics/icons/silver-ore-3.png", size=128, scale=0.125},
+        {filename="__bzgold__/graphics/icons/silver-ore-4.png", size=128, scale=0.125},
+      },
       subgroup = "raw-resource",
       order = "b[silver-plate]",
       stack_size = util.get_stack_size(200),
@@ -85,7 +92,4 @@ if util.me.silver() then
       order = "b-b",
     },
   })
-
-  util.add_prerequisite("advanced-electronics", "silver-processing")
-  util.add_prerequisite("solar-energy", "silver-processing")
 end
