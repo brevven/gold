@@ -3,6 +3,8 @@ local noise = require('noise');
 
 local util = require("data-util");
 
+if util.me.platinum() or util.me.palladium() then
+
 local base_density = mods.bzaluminum and 3 or 4
 
 
@@ -132,3 +134,4 @@ data:extend({
     },
   },
 })
+end
