@@ -3,36 +3,6 @@ local util = require("data-util");
 data:extend({
   {
     type = "item",
-    name = "platinum-powder",
-    icon = "__bzgold__/graphics/icons/platinum-powder.png",
-    icon_size = 64,
-    subgroup = "raw-resource",
-    order = "b[platinum-powder]",
-    stack_size = util.get_stack_size(100),
-  },
-  {
-    type = "item",
-    name = "platinum-ingot",
-    icon = "__bzgold__/graphics/icons/platinum-ingot.png",
-    icon_size = 128,
-    subgroup = "raw-resource",
-    order = "b[platinum-ingot]",
-    stack_size = util.get_stack_size(100),
-  },
-  {
-    type = "recipe",
-    name = "platinum-ingot",
-    category = "smelting",
-    order = "d[platinum-ingot]",
-    enabled = true,
-    energy_required = 1.6,
-    ingredients = {{"platinum-powder", 1}},
-    results = {{"platinum-ingot", 1}},
-  },
-})
-data:extend({
-  {
-    type = "item",
     name = "palladium-powder",
     icon = "__bzgold__/graphics/icons/palladium-powder.png",
     icon_size = 64,
@@ -63,23 +33,19 @@ data:extend({
 data:extend({
   {
     type = "technology",
-    name = "plpd-processing",
+    name = "palladium-processing",
     icons = {
       {
-        icon = "__bzgold__/graphics/icons/platinum-ingot.png",
-        icon_size = 128, shift = {-32,-32},
-      },
-      {
         icon = "__bzgold__/graphics/icons/palladium-ingot.png",
-        icon_size = 128, shift = {32,32},
+        icon_size = 128,
       },
     },
     effects = {
       { type = "unlock-recipe", recipe = "palladium-ingot" },
-      { type = "unlock-recipe", recipe = "platinum-ingot" },
+      { type = "unlock-recipe", recipe = "rich-copper" },
     },
     unit = {
-      count = 100, time = 30,
+      count = 50, time = 30,
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
@@ -90,3 +56,28 @@ data:extend({
     order = "b-b",
   },
 })
+if mods.bztitanium then
+data:extend({
+  {
+    type = "item",
+    name = "titanium-palladium-flange",
+    icon = "__bzgold__/graphics/icons/titanium-palladium-alloy.png",
+    icon_size = 128,
+    subgroup = "intermediate-product",
+    order = "b[palladium-ingot]",
+    stack_size = 100,
+  },
+  {
+    type = "recipe",
+    name = "titanium-palladium-flange",
+    category = "advanced-crafting",
+    order = "d[palladium-ingot]",
+    enabled = true,
+    energy_required = 5,
+    ingredients = {{"palladium-ingot", 1}, {util.titanium_plate, 4}},
+    results = {{"titanium-palladium-flange", 5}},
+  },
+})
+util.add_unlock("palladium-processing", "titanium-palladium-flange")
+util.set_to_founding("titanium-palladium-flange")
+end
