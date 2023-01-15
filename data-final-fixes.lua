@@ -1,4 +1,5 @@
 require("stacking")
+require("prototypes/electronic-circuit-final")
 require("modules")
 -- require("tin-recipe-final-5d")
 -- require("tin-recipe-final-rrr")
@@ -10,6 +11,9 @@ if mods["space-exploration"] then
   -- util.add_to_product("se-core-fragment-omni", "salt", -5)
 end
 
+
+util.replace_ingredient("textplate-small-gold", "sulfur", "gold-ingot")
+util.replace_ingredient("textplate-large-gold", "sulfur", "gold-ingot")
 
 -- Must be last
 util.create_list()

@@ -1,6 +1,11 @@
 -- Enable prod modules for some recipes
 -- Recipes with very specific ratios are deliberately excluded
-recipes = {}
+recipes = {
+  "electronic-circuit-silver", "silver-plate", "silver-wire",
+  "gold-ingot", "platinum-ingot", "palladium-ingot",
+  "temperature-sensor", "mlcc",
+}
+
 if mods["Krastorio2"] then
 end
 
