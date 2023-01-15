@@ -36,8 +36,8 @@ data:extend({
     name = "platinum-processing",
     icons = {
       {
-        icon = "__bzgold__/graphics/icons/platinum-ingot.png",
-        icon_size = 128,
+        icon = "__bzgold__/graphics/technology/platinum-processing.png",
+        icon_size = 256,
       },
     },
     effects = {

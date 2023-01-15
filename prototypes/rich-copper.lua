@@ -5,8 +5,48 @@ local util = require("data-util");
 
 if util.me.platinum() or util.me.palladium() then
 
-local base_density = mods.bzaluminum and 3 or 4
-
+local results = {}
+if util.me.silver() and util.me.platinum() and util.me.palladium() then
+  results = {
+    {type="item", name="copper-plate", amount=1},
+    {type="item", name="silver-ore", amount=1, probability=0.5},
+    {type="item", name="platinum-powder", amount=1, probability=0.25},
+    {type="item", name="palladium-powder", amount=1, probability=0.25},
+  }
+elseif util.me.silver() and util.me.platinum() then
+  results = {
+    {type="item", name="copper-plate", amount=1},
+    {type="item", name="silver-ore", amount=1, probability=0.67},
+    {type="item", name="platinum-powder", amount=1, probability=0.33},
+  }
+elseif util.me.silver() and util.me.palladium() then
+  results = {
+    {type="item", name="copper-plate", amount=1},
+    {type="item", name="silver-ore", amount=1, probability=0.67},
+    {type="item", name="palladium-powder", amount=1, probability=0.33},
+  }
+elseif util.me.platinum() and util.me.palladium() then
+  results = {
+    {type="item", name="copper-plate", amount=1},
+    {type="item", name="platinum-powder", amount=1, probability=0.5},
+    {type="item", name="palladium-powder", amount=1, probability=0.5},
+  }
+elseif util.me.platinum() then
+  results = {
+    {type="item", name="copper-plate", amount=2, probability = 0.75},
+    {type="item", name="platinum-powder", amount=1, probability=0.5},
+  }
+elseif util.me.palladium() then
+  results = {
+    {type="item", name="copper-plate", amount=2, probability = 0.75},
+    {type="item", name="palladium-powder", amount=1, probability=0.5},
+  }
+else -- should never happen
+  results = {
+    {type="item", name="copper-plate", amount=2},
+  }
+end
+ 
 
 if data.raw.resource["copper-ore"] then
   if mods["space-exploration"] then
@@ -20,7 +60,7 @@ if data.raw.resource["copper-ore"] then
     data.raw.resource["copper-ore"].autoplace = resource_autoplace.resource_autoplace_settings{
       name = "copper-ore",
       order = "b",
-      base_density = base_density,
+      base_density = mods.bzaluminum and 3 or 4,
       has_starting_area_placement = true,
       regular_rq_factor_multiplier = 1.1,
       starting_rq_factor_multiplier = 1.1,
@@ -63,7 +103,7 @@ data:extend({
       name = "rich-copper-ore",
       autoplace_control_name = "copper-ore",
       order = "b-z",
-      base_density = base_density,
+      base_density = 4,
       base_spots_per_km2 = 1,
       has_starting_area_placement = true, -- TODO CHANGE THIS
       regular_rq_factor_multiplier = 1,
@@ -120,18 +160,13 @@ data:extend({
     enabled = false,
     icons = {
       {icon = "__base__/graphics/icons/copper-plate.png", icon_size = 64, icon_mipmaps=4},
-      {icon = "__bzgold__/graphics/icons/silver-ore.png", icon_size = 128, scale=0.25, shift = {8,8}},
-      {icon = "__bzgold__/graphics/icons/platinum-powder.png", icon_size = 64, scale=0.5, shift = {8,-8}},
-      {icon = "__bzgold__/graphics/icons/palladium-powder.png", icon_size = 64, scale=0.5, shift = {-8,8}},
+      {icon = "__bzgold__/graphics/icons/silver-ore.png", icon_size = 128, scale=0.125, shift = {8,8}},
+      {icon = "__bzgold__/graphics/icons/platinum-powder.png", icon_size = 64, scale=0.25, shift = {8,-8}},
+      {icon = "__bzgold__/graphics/icons/palladium-powder.png", icon_size = 64, scale=0.25, shift = {-8,-8}},
     },
     energy_required = 6.4,
-    ingredients = {{"rich-copper-ore", 1}},
-    results = {
-      {type="item", name="copper-plate", amount=1},
-      {type="item", name="silver-ore", amount=1, probability=0.5},
-      {type="item", name="platinum-powder", amount=1, probability=0.25},
-      {type="item", name="palladium-powder", amount=1, probability=0.25},
-    },
+    ingredients = {{"rich-copper-ore", 2}},
+    results = results,
   },
 })
 end

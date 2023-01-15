@@ -25,8 +25,8 @@ data:extend({
     name = "gold-processing",
     icons = {
       {
-        icon = "__bzgold__/graphics/icons/gold-ingot.png",
-        icon_size = 128,
+        icon = "__bzgold__/graphics/technology/gold-processing.png",
+        icon_size = 256,
       },
     },
     effects = {

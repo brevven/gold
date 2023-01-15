@@ -37,7 +37,7 @@ if util.me.silver() then
       enabled = true,
       energy_required = 1.6,
       ingredients = {{"silver-ore", 1}},
-      results = {{"silver-plate", 4}},
+      results = {{"silver-plate", 1}},
     },
   })
 
@@ -59,36 +59,63 @@ if util.me.silver() then
       enabled = true,
       energy_required = 1,
       ingredients = {{"silver-plate", 1}},
-      results = {{"silver-wire", 4}},
+      results = {{"silver-wire", 3}},
     },
   })
 
+  brazing = mods.BrassTacks and {
+    {"silver-plate", 2},
+    {"zinc-plate", 1},
+    {"copper-plate", 1}
+  } or {
+    {"silver-plate", 2},
+    {"copper-plate", 2}
+  }
+  
+  data:extend({
+    {
+      type = "item",
+      name = "silver-brazing-alloy",
+      icon = "__bzgold__/graphics/icons/silver-brazing-alloy.png",
+      icon_size = 128,
+      subgroup = "intermediate-product",
+      order = "b[silver-brazing-alloy]",
+      stack_size = util.get_stack_size(100),
+    },
+    {
+      type = "recipe",
+      name = "silver-brazing-alloy",
+      category = "crafting",
+      order = "d[silver-brazing-alloy]",
+      enabled = true,
+      energy_required = 1,
+      ingredients = brazing,
+      results = {{"silver-brazing-alloy", 4}},
+    },
+  })
+
+
+  local prereqs= mods.bzaluminum and {"copper-processing"} or {}
   data:extend({
     {
       type = "technology",
       name = "silver-processing",
       icons = {
         {
-          icon = "__bzgold__/graphics/icons/silver-plate.png",
-          icon_size = 128,
-        },
-        {
-          icon = "__bzgold__/graphics/icons/silver-wire.png",
-          icon_size = 64, icon_mipmaps=4,
+          icon = "__bzgold__/graphics/technology/silver-processing.png",
+          icon_size = 256,
         },
       },
       effects = {
         { type = "unlock-recipe", recipe = "silver-plate" },
         { type = "unlock-recipe", recipe = "silver-wire" },
+        { type = "unlock-recipe", recipe = "silver-brazing-alloy" },
       },
       unit = {
-        count = 40, time = 15,
-        ingredients = {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1}
-        },
+        count = 10, time = 15,
+        ingredients = { {"automation-science-pack", 1}, },
       },
-      prerequisites = {"advanced-material-processing"},
+      prerequisites = prereqs,
       order = "b-b",
     },
   })

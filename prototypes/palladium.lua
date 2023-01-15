@@ -36,8 +36,8 @@ data:extend({
     name = "palladium-processing",
     icons = {
       {
-        icon = "__bzgold__/graphics/icons/palladium-ingot.png",
-        icon_size = 128,
+        icon = "__bzgold__/graphics/technology/palladium-processing.png",
+        icon_size = 256,
       },
     },
     effects = {

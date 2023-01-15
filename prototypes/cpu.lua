@@ -2,7 +2,7 @@ local util = require("data-util");
 
 if mods.bzsilicon then
 local silicon = data.raw.item["silicon-wafer"] and {"silicon-wafer", 30} or {"silicon", 15}
-local spreader = data.raw.item["cuw"] and {"cuw", 1} or {"copper-plate", 1}
+local spreader = data.raw.item["cuw"] and {"cuw", 2} or {"copper-plate", 2}
 data:extend({
   {
     type = "item",
@@ -22,13 +22,13 @@ data:extend({
     energy_required = 50,
     ingredients = {
       silicon,
+      spreader,
       {"gold-ingot", 1},
-      {"copper-plate", 1},
       {"electronic-circuit", 10},
       {type="fluid", name="sulfuric-acid", amount=50},
     },
     results = {{"cpu", 10}},
   },
 })
-util.replace_ingredient("cpu", "electronic-circuit", "pcb", 10, {"force", true})
+util.replace_ingredient("cpu", "electronic-circuit", "pcb", 10, false, {"force", true})
 end
