@@ -8,6 +8,7 @@ require("prototypes/temperature-sensor")
 require("prototypes/mlcc")
 require("prototypes/cpu")
 require("prototypes/mainboard")
+require("prototypes/catalyst")
 require("cables")
 
 local util = require("data-util");
