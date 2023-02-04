@@ -25,7 +25,7 @@ data:extend({
         {filename="__bzgold__/graphics/icons/mlcc.png", size=128, scale=0.09375},
         {filename="__bzgold__/graphics/icons/mlcc-1.png", size=128, scale=0.09375},
         {filename="__bzgold__/graphics/icons/mlcc-2.png", size=128, scale=0.09375},
-        {filename="__bzgold__/graphics/icons/mlcc-3.png", size=128, scale=0.09375},
+        -- {filename="__bzgold__/graphics/icons/mlcc-3.png", size=128, scale=0.09375},
         {filename="__bzgold__/graphics/icons/mlcc-4.png", size=128, scale=0.09375},
         -- {filename="__bzgold__/graphics/icons/mlcc.png", size=128, scale=0.0625},
         -- {filename="__bzgold__/graphics/icons/mlcc-1.png", size=128, scale=0.0625},

@@ -15,7 +15,7 @@ data:extend({
     name = "gold-ingot",
     category = "smelting",
     order = "d[gold-ingot]",
-    enabled = true,
+    enabled = false,
     energy_required = 1.6,
     ingredients = {{"gold-ore", 1}},
     results = {{"gold-ingot", 1}},

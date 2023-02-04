@@ -1,5 +1,6 @@
 local util = require("data-util");
 
+if util.me.platinum() then
 data:extend({
   {
     type = "item",
@@ -24,7 +25,7 @@ data:extend({
     name = "platinum-ingot",
     category = "smelting",
     order = "d[platinum-ingot]",
-    enabled = true,
+    enabled = false,
     energy_required = 1.6,
     ingredients = {{"platinum-powder", 1}},
     results = {{"platinum-ingot", 1}},
@@ -56,3 +57,4 @@ data:extend({
     order = "b-b",
   },
 })
+end

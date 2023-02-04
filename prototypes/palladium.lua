@@ -1,5 +1,6 @@
 local util = require("data-util");
 
+if util.me.palladium() then
 data:extend({
   {
     type = "item",
@@ -24,7 +25,7 @@ data:extend({
     name = "palladium-ingot",
     category = "smelting",
     order = "d[palladium-ingot]",
-    enabled = true,
+    enabled = false,
     energy_required = 1.6,
     ingredients = {{"palladium-powder", 1}},
     results = {{"palladium-ingot", 1}},
@@ -72,7 +73,7 @@ data:extend({
     name = "titanium-palladium-flange",
     category = "advanced-crafting",
     order = "d[palladium-ingot]",
-    enabled = true,
+    enabled = false,
     energy_required = 5,
     ingredients = {{"palladium-ingot", 1}, {util.titanium_plate, 4}},
     results = {{"titanium-palladium-flange", 5}},
@@ -80,4 +81,5 @@ data:extend({
 })
 util.add_unlock("palladium-processing", "titanium-palladium-flange")
 util.set_to_founding("titanium-palladium-flange")
+end
 end

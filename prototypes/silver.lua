@@ -34,7 +34,7 @@ if util.me.silver() then
       name = "silver-plate",
       category = "smelting",
       order = "d[silver-plate]",
-      enabled = true,
+      enabled = false,
       energy_required = 1.6,
       ingredients = {{"silver-ore", 1}},
       results = {{"silver-plate", 1}},
@@ -56,7 +56,7 @@ if util.me.silver() then
       name = "silver-wire",
       category = "crafting",
       order = "d[silver-wire]",
-      enabled = true,
+      enabled = false,
       energy_required = 1,
       ingredients = {{"silver-plate", 1}},
       results = {{"silver-wire", 3}},
@@ -87,15 +87,14 @@ if util.me.silver() then
       name = "silver-brazing-alloy",
       category = "crafting",
       order = "d[silver-brazing-alloy]",
-      enabled = true,
+      enabled = false,
       energy_required = 1,
       ingredients = brazing,
       results = {{"silver-brazing-alloy", 4}},
     },
   })
 
-
-  local prereqs= mods.bzaluminum and {"copper-processing"} or {}
+  local prereqs= mods.bzaluminum and {"copper-processing"} or {"automation"}
   data:extend({
     {
       type = "technology",
