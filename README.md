@@ -13,6 +13,9 @@ See changelog.txt
 
 ## Thanks to 
 - [snouz](https://github.com/snouz) (logo inspiration)
+- [nihilistzsche](https://mods.factorio.com/user/nihilistzsche) (improvements to crafting efficiency compatibility)
+
+
 
 
 ### Localization
