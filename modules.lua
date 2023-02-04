@@ -1,15 +1,8 @@
 -- Enable prod modules for some recipes
 -- Recipes with very specific ratios are deliberately excluded
-recipes = {
-  "electronic-circuit-silver", "silver-plate", "silver-wire",
-  "gold-ingot", "platinum-ingot", "palladium-ingot",
-  "temperature-sensor", "mlcc",
-}
+local util = require("data-util")
 
-if mods["Krastorio2"] then
-end
-
-for i, recipe in pairs(recipes) do
+for i, recipe in pairs(util.me.recipes) do
   if data.raw.recipe[recipe] then
     for j, module in pairs(data.raw.module) do
       if module.effect then

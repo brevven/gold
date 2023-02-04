@@ -3,6 +3,7 @@ require("prototypes/processing-unit-updates")
 require("prototypes/recipe-updates")
 require("map-gen-preset-updates")
 -- require("compatibility/bob")
+require("compatibility/crafting-efficiency")
 
 -- require("strange-matter")
 -- require("compatibility/248k")

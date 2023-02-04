@@ -2,6 +2,11 @@ local me = {}
 
 me.name = "bzgold"
 me.list = {}
+me.recipes = {
+  "electronic-circuit-silver", "silver-plate", "silver-wire",
+  "gold-ingot", "platinum-ingot", "palladium-ingot",
+  "temperature-sensor", "mlcc",
+}
 
 
 function me.silver() 
