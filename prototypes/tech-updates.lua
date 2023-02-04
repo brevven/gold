@@ -24,3 +24,5 @@ if mods.bzsilicon then
   util.add_unlock("advanced-electronics-2", "cpu")
 end
 util.add_unlock("advanced-electronics-2", "mainboard")
+
+util.add_unlock("coal-liquefaction", "catalysis")
