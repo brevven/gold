@@ -94,6 +94,8 @@ data:extend({
       hardness = 1,
       mining_particle = "copper-ore-particle",
       mining_time = 1,
+      fluid_amount = 1,
+      required_fluid = "water",
       result = "rich-copper-ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
@@ -105,7 +107,7 @@ data:extend({
       order = "b-z",
       base_density = 4,
       base_spots_per_km2 = 1,
-      has_starting_area_placement = true, -- TODO CHANGE THIS
+      has_starting_area_placement = false,
       regular_rq_factor_multiplier = 1,
       starting_rq_factor_multiplier = 1,
     },
