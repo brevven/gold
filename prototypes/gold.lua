@@ -50,7 +50,7 @@ data:extend({
         {"chemical-science-pack", 1},
       },
     },
-    prerequisites = mods["space-exploration"] and {"rocket-science-pack"} or {"chemical-science-pack"},
+    prerequisites = mods["space-exploration"] and {"se-rocket-science-pack"} or {"chemical-science-pack"},
     order = "b-b",
   },
 })
