@@ -150,23 +150,26 @@ data:extend({
 })
 
 
-data:extend({
-  {
-    type = "recipe",
-    name = "rich-copper",
-    category = "smelting",
-    main_product = "copper-plate",
-    order = "d[copper-plate]",
-    enabled = false,
-    icons = {
-      {icon = "__base__/graphics/icons/copper-plate.png", icon_size = 64, icon_mipmaps=4},
-      {icon = "__bzgold__/graphics/icons/silver-ore.png", icon_size = 128, scale=0.125, shift = {8,8}},
-      {icon = "__bzgold__/graphics/icons/platinum-powder.png", icon_size = 64, scale=0.25, shift = {8,-8}},
-      {icon = "__bzgold__/graphics/icons/palladium-powder.png", icon_size = 64, scale=0.25, shift = {-8,-8}},
+if not mods.Krastorio2 then
+  data:extend({
+    {
+      type = "recipe",
+      name = "rich-copper",
+      category = "smelting",
+      main_product = "copper-plate",
+      order = "d[copper-plate]",
+      enabled = false,
+      icons = {
+        {icon = "__base__/graphics/icons/copper-plate.png", icon_size = 64, icon_mipmaps=4},
+        {icon = "__bzgold__/graphics/icons/rich-copper-ore.png", icon_size = 64, scale=0.25, shift = {-8,8}},
+        -- {icon = "__bzgold__/graphics/icons/silver-ore.png", icon_size = 128, scale=0.125, shift = {8,8}},
+        -- {icon = "__bzgold__/graphics/icons/platinum-powder.png", icon_size = 64, scale=0.25, shift = {8,-8}},
+        -- {icon = "__bzgold__/graphics/icons/palladium-powder.png", icon_size = 64, scale=0.25, shift = {-8,-8}},
+      },
+      energy_required = 6.4,
+      ingredients = {{"rich-copper-ore", 2}},
+      results = results,
     },
-    energy_required = 6.4,
-    ingredients = {{"rich-copper-ore", 2}},
-    results = results,
-  },
-})
+  })
+end
 end
