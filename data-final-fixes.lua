@@ -11,9 +11,15 @@ if mods["space-exploration"] then
   -- util.add_to_product("se-core-fragment-omni", "salt", -5)
 end
 
-
 util.replace_ingredient("textplate-small-gold", "sulfur", "gold-ingot")
 util.replace_ingredient("textplate-large-gold", "sulfur", "gold-ingot")
+
+-- If furnaces are treated as furnaces, we need 4 outputs
+for i, entity in pairs(data.raw.furnace) do
+  if entity.result_inventory_size ~= nil and entity.result_inventory_size < 4 and util.contains(entity.crafting_categories, "smelting") then
+    entity.result_inventory_size = 4
+  end
+end
 
 -- Must be last
 util.create_list()
