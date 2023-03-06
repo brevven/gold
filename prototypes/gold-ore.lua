@@ -3,6 +3,151 @@ local noise = require('noise');
 
 local util = require("data-util");
 
+data:extend(
+{
+  {
+    type = "optimized-particle",
+    name = "gold-ore-particle",
+    flags = {"not-on-map"},
+    life_time = 180,
+    pictures =
+    {
+      {
+        filename = "__bzgold__/graphics/entity/ores/particle/gold-ore-particle-1.png",
+        priority = "extra-high",
+        width = 16,
+        height = 16,
+        frame_count = 1,
+        hr_version =
+        {
+          filename = "__bzgold__/graphics/entity/ores/particle/hr-gold-ore-particle-1.png",
+          priority = "extra-high",
+          width = 32,
+          height = 32,
+          frame_count = 1,
+          scale = 0.5
+        }
+      },
+      {
+        filename = "__bzgold__/graphics/entity/ores/particle/gold-ore-particle-2.png",
+        priority = "extra-high",
+        width = 16,
+        height = 16,
+        frame_count = 1,
+        hr_version =
+        {
+          filename = "__bzgold__/graphics/entity/ores/particle/hr-gold-ore-particle-2.png",
+          priority = "extra-high",
+          width = 32,
+          height = 32,
+          frame_count = 1,
+          scale = 0.5
+        }
+      },
+      {
+        filename = "__bzgold__/graphics/entity/ores/particle/gold-ore-particle-3.png",
+        priority = "extra-high",
+        width = 16,
+        height = 16,
+        frame_count = 1,
+        hr_version =
+        {
+          filename = "__bzgold__/graphics/entity/ores/particle/hr-gold-ore-particle-3.png",
+          priority = "extra-high",
+          width = 32,
+          height = 32,
+          frame_count = 1,
+          scale = 0.5
+        }
+      },
+      {
+        filename = "__bzgold__/graphics/entity/ores/particle/gold-ore-particle-4.png",
+        priority = "extra-high",
+        width = 16,
+        height = 16,
+        frame_count = 1,
+        hr_version =
+        {
+          filename = "__bzgold__/graphics/entity/ores/particle/hr-gold-ore-particle-4.png",
+          priority = "extra-high",
+          width = 32,
+          height = 32,
+          frame_count = 1,
+          scale = 0.5
+        }
+      }
+    },
+    shadows =
+    {
+      {
+        filename = "__bzgold__/graphics/entity/ores/particle/gold-ore-particle-shadow-1.png",
+        priority = "extra-high",
+        width = 16,
+        height = 16,
+        frame_count = 1,
+        hr_version =
+        {
+          filename = "__bzgold__/graphics/entity/ores/particle/hr-gold-ore-particle-shadow-1.png",
+          priority = "extra-high",
+          width = 32,
+          height = 32,
+          frame_count = 1,
+          scale = 0.5
+        }
+      },
+      {
+        filename = "__bzgold__/graphics/entity/ores/particle/gold-ore-particle-shadow-2.png",
+        priority = "extra-high",
+        width = 16,
+        height = 16,
+        frame_count = 1,
+        hr_version =
+        {
+          filename = "__bzgold__/graphics/entity/ores/particle/hr-gold-ore-particle-shadow-2.png",
+          priority = "extra-high",
+          width = 32,
+          height = 32,
+          frame_count = 1,
+          scale = 0.5
+        }
+      },
+      {
+        filename = "__bzgold__/graphics/entity/ores/particle/gold-ore-particle-shadow-3.png",
+        priority = "extra-high",
+        width = 16,
+        height = 16,
+        frame_count = 1,
+        hr_version =
+        {
+          filename = "__bzgold__/graphics/entity/ores/particle/hr-gold-ore-particle-shadow-3.png",
+          priority = "extra-high",
+          width = 32,
+          height = 32,
+          frame_count = 1,
+          scale = 0.5
+        }
+      },
+      {
+        filename = "__bzgold__/graphics/entity/ores/particle/gold-ore-particle-shadow-4.png",
+        priority = "extra-high",
+        width = 16,
+        height = 16,
+        frame_count = 1,
+        hr_version =
+        {
+          filename = "__bzgold__/graphics/entity/ores/particle/hr-gold-ore-particle-shadow-4.png",
+          priority = "extra-high",
+          width = 32,
+          height = 32,
+          frame_count = 1,
+          scale = 0.5
+        }
+      }
+    }
+  }
+}
+)
+
 data:extend({
 	{
     type = "autoplace-control",
@@ -26,7 +171,7 @@ data:extend({
     minable =
     {
       hardness = 1,
-      mining_particle = "copper-ore-particle",
+      mining_particle = "gold-ore-particle",
       mining_time = 1,
       results = {
         {type="item", name="gold-ore", amount=1, probability=.25},
