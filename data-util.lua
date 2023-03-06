@@ -630,6 +630,40 @@ function remove_ingredient(recipe, old)
   end
 end
 
+-- Replace an amount of a product, leaving at least 1 of old
+function util.replace_some_product(recipe_name, old, old_amount, new, new_amount, options)
+  if not should_force(options) and bypass(recipe_name) then return end
+  local is_fluid = not not data.raw.fluid[new]  -- NOTE CURRENTLY UNUSUED
+  if data.raw.recipe[recipe_name] and (data.raw.item[new] or is_fluid) then
+    me.add_modified(recipe_name)
+    replace_some_product(data.raw.recipe[recipe_name], old, old_amount, new, new_amount, is_fluid)
+    replace_some_product(data.raw.recipe[recipe_name].normal, old, old_amount, new, new_amount, is_fluid)
+    replace_some_product(data.raw.recipe[recipe_name].expensive, old, old_amount, new, new_amount, is_fluid)
+  end
+end
+
+function replace_some_product(recipe, old, old_amount, new, new_amount)
+	if recipe ~= nil then
+    if recipe.result == new then return end
+    if recipe.results then
+      for i, existing in pairs(recipe.results) do
+        if existing[1] == new or existing.name == new then
+          return
+        end
+      end
+    end
+    add_product(recipe, {new, new_amount})
+		for i, product in pairs(recipe.results) do 
+			if product.name == old then
+        product.amount = math.max(1, product.amount - old_amount)
+      end
+			if product[1] == old then
+        product[2] = math.max(1, product[2] - old_amount)
+      end
+		end
+	end
+end
+
 -- Replace an amount of an ingredient in a recipe. Keep at least 1 of old.
 function util.replace_some_ingredient(recipe_name, old, old_amount, new, new_amount, options)
   if not should_force(options) and bypass(recipe_name) then return end
@@ -821,13 +855,13 @@ end
 function util.replace_product(recipe_name, old, new, options)
   if not should_force(options) and bypass(recipe_name) then return end
   if data.raw.recipe[recipe_name] then
-    replace_product(data.raw.recipe[recipe_name], old, new)
-    replace_product(data.raw.recipe[recipe_name].normal, old, new)
-    replace_product(data.raw.recipe[recipe_name].expensive, old, new)
+    replace_product(data.raw.recipe[recipe_name], old, new, options)
+    replace_product(data.raw.recipe[recipe_name].normal, old, new, options)
+    replace_product(data.raw.recipe[recipe_name].expensive, old, new, options)
   end
 end
 
-function replace_product(recipe, old, new)
+function replace_product(recipe, old, new, options)
   if recipe then
     if recipe.main_product == old then
       recipe.main_product = new
