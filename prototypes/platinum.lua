@@ -48,7 +48,6 @@ data:extend({
     },
     effects = {
       { type = "unlock-recipe", recipe = "platinum-ingot" },
-      { type = "unlock-recipe", recipe = "rich-copper" },
     },
     unit = {
       count = 50, time = 30,

@@ -4,6 +4,21 @@ local noise = require('noise');
 local util = require("data-util");
 
 if util.me.platinum() or util.me.palladium() then
+if mods.Krastorio2 then
+  util.multiply_recipe("rare-metals", 2)
+  util.multiply_recipe("rare-metals-2", 2)
+
+  util.set_main_product("rare-metals", "rare-metals")
+  util.set_main_product("rare-metals-2", "rare-metals")
+
+  if util.me.platinum() and util.me.palladium() then
+    util.replace_some_product("rare-metals",   "rare-metals", 2, "platinum-powder",  2, {force=true})
+    util.replace_some_product("rare-metals",   "rare-metals", 2, "palladium-powder", 2, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 3, "platinum-powder",  3, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 3, "palladium-powder", 3, {force=true})
+  end
+
+else
 
 local results = {}
 if util.me.silver() and util.me.platinum() and util.me.palladium() then
@@ -107,7 +122,7 @@ data:extend({
       order = "b-z",
       base_density = 4,
       base_spots_per_km2 = 1,
-      has_starting_area_placement = false,
+      has_starting_area_placement = true, -- TODO CHANGE THIS
       regular_rq_factor_multiplier = 1,
       starting_rq_factor_multiplier = 1,
     },
@@ -152,26 +167,27 @@ data:extend({
 })
 
 
-if not mods.Krastorio2 then
-  data:extend({
-    {
-      type = "recipe",
-      name = "rich-copper",
-      category = "smelting",
-      main_product = "copper-plate",
-      order = "d[copper-plate]",
-      enabled = false,
-      icons = {
-        {icon = "__base__/graphics/icons/copper-plate.png", icon_size = 64, icon_mipmaps=4},
-        {icon = "__bzgold__/graphics/icons/rich-copper-ore.png", icon_size = 64, scale=0.25, shift = {-8,8}},
-        -- {icon = "__bzgold__/graphics/icons/silver-ore.png", icon_size = 128, scale=0.125, shift = {8,8}},
-        -- {icon = "__bzgold__/graphics/icons/platinum-powder.png", icon_size = 64, scale=0.25, shift = {8,-8}},
-        -- {icon = "__bzgold__/graphics/icons/palladium-powder.png", icon_size = 64, scale=0.25, shift = {-8,-8}},
-      },
-      energy_required = 6.4,
-      ingredients = {{"rich-copper-ore", 2}},
-      results = results,
+data:extend({
+  {
+    type = "recipe",
+    name = "rich-copper",
+    category = "smelting",
+    main_product = "copper-plate",
+    order = "d[copper-plate]",
+    enabled = false,
+    icons = {
+      {icon = "__base__/graphics/icons/copper-plate.png", icon_size = 64, icon_mipmaps=4},
+      {icon = "__bzgold__/graphics/icons/rich-copper-ore.png", icon_size = 64, scale=0.25, shift = {-8,8}},
+      -- {icon = "__bzgold__/graphics/icons/silver-ore.png", icon_size = 128, scale=0.125, shift = {8,8}},
+      -- {icon = "__bzgold__/graphics/icons/platinum-powder.png", icon_size = 64, scale=0.25, shift = {8,-8}},
+      -- {icon = "__bzgold__/graphics/icons/palladium-powder.png", icon_size = 64, scale=0.25, shift = {-8,-8}},
     },
-  })
+    energy_required = 6.4,
+    ingredients = {{"rich-copper-ore", 2}},
+    results = results,
+  },
+})
+util.add_unlock("platinum-processing", "rich-copper")
+util.add_unlock("palladium-processing", "rich-copper")
 end
 end
