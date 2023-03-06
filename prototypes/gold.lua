@@ -1,5 +1,14 @@
 local util = require("data-util");
 
+local results = {{"gold-ingot", 1}}
+
+if util.me.silver() and util.me.byproduct() then
+  results = {
+    {type = "item", name="gold-ingot", amount=1, probability=.9},
+    {type = "item", name="silver-ore", amount=1, probability=.1},
+  }
+end
+
 data:extend({
   {
     type = "item",
@@ -13,12 +22,13 @@ data:extend({
   {
     type = "recipe",
     name = "gold-ingot",
+    main_product = "gold-ingot",
     category = "smelting",
     order = "d[gold-ingot]",
     enabled = false,
     energy_required = 1.6,
     ingredients = {{"gold-ore", 1}},
-    results = {{"gold-ingot", 1}},
+    results = results,
   },
   {
     type = "technology",

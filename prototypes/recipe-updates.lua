@@ -1,5 +1,11 @@
 local util = require("data-util")
 
+-- K2 silver from copper
+if mods.Krastorio2 then
+  util.replace_some_product("copper-plate", "copper-plate", 1, "silver-ore", 1)
+  util.add_product("enriched-copper", {"silver-ore", 1})
+end
+
 if mods.bztitanium then
   util.replace_ingredient("heat-exchanger", util.titanium_plate, "titanium-palladium-flange")
   util.replace_some_ingredient("steam-turbine", util.titanium_plate, 10, "titanium-palladium-flange", 10)

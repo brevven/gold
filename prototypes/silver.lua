@@ -118,4 +118,21 @@ if util.me.silver() then
       order = "b-b",
     },
   })
+
+  -- replace lead byproducts, set copper byproducts
+  util.set_main_product("copper-plate", "copper-plate")
+  if mods.bzlead and util.me.lead_byproduct() then
+    util.replace_product("lead-plate", "copper-ore", "silver-ore")
+    util.replace_product("enriched-lead", "copper-ore", "silver-ore")
+
+    -- small silver byproduct on copper, even if lead is enabled
+    if not mods.Krastorio2 and util.me.byproduct() then
+      util.add_product("copper-plate", {type=item, name="silver-ore", amount=1, probability=0.1})
+    end
+  else
+    if not mods.Krastorio2 then
+      util.multiply_recipe("copper-plate", 4)
+      util.replace_some_product("copper-plate", "copper-plate", 1, "silver-ore", 1)
+    end
+  end
 end
