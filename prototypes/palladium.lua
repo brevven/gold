@@ -23,12 +23,17 @@ data:extend({
   {
     type = "recipe",
     name = "palladium-ingot",
+    main_product = "palladium-ingot",
     category = "smelting",
     order = "d[palladium-ingot]",
     enabled = false,
     energy_required = 1.6,
     ingredients = {{"palladium-powder", 1}},
-    results = {{"palladium-ingot", 1}},
+    results = util.me.byproduct() and
+    {
+      {type="item", name="palladium-ingot", amount=1, probability=0.95},
+      {type="item", name="sulfur", amount=1, probability=0.05},
+    } or  {{"palladium-ingot", 1}},
   },
 })
 data:extend({

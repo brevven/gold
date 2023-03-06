@@ -8,6 +8,9 @@ me.recipes = {
   "temperature-sensor", "mlcc",
 }
 
+function me.byproduct()
+  return me.get_setting("bzgold-byproduct") and not me.get_setting("bz-no-byproduct")
+end
 
 function me.silver() 
   if me.get_setting("bz-all-intermediates") then return true end

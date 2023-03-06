@@ -5,14 +5,21 @@ data:extend({
 		setting_type = "startup",
 		default_value = "",
     allow_blank = true,
-    order = "a",
+    order = "a1",
 	},
   {
 		type = "bool-setting",
 		name = "bzgold-list",
 		setting_type = "startup",
     default_value = false,
-    order = "b",
+    order = "a2",
+	},
+  {
+		type = "bool-setting",
+		name = "bzgold-byproduct",
+		setting_type = "startup",
+    default_value = true,
+    order = "a3",
 	},
   {
     type = "bool-setting",
