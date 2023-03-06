@@ -42,7 +42,7 @@ data:extend({
       },
     },
     effects = {
-      { type = "unlock-recipe", recipe = "palladium-ingot" },
+      { type = "unlock-recipe", recipe = "platinum-ingot" },
       { type = "unlock-recipe", recipe = "rich-copper" },
     },
     unit = {

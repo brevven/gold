@@ -37,7 +37,7 @@ if util.me.catalysis() then
           {"production-science-pack", 1},
         },
       },
-      prerequisites = {"production-science-pack"},
+      prerequisites = {"production-science-pack", "advanced-oil-processing"},
       order = "b-b",
     },
   })

@@ -1,6 +1,7 @@
 local futil = require("util");
 local util = require("data-util");
 
+if util.me.catalysis() then
 local recipes_to_update = {
   "heavy-oil-cracking",
   "light-oil-cracking",
@@ -44,4 +45,5 @@ for i, recipe_name in pairs(recipes_to_update) do
   for j, fluid in pairs({"heavy-oil", "light-oil", "petroleum-gas"}) do
     util.add_to_ingredient(recipe_name, fluid, 10)
   end
+end
 end

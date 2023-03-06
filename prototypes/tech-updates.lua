@@ -25,4 +25,6 @@ if mods.bzsilicon then
 end
 util.add_unlock("advanced-electronics-2", "mainboard")
 
-util.add_unlock("coal-liquefaction", "catalysis")
+util.add_prerequisite("coal-liquefaction", "catalysis")
+util.remove_prerequisite("coal-liquefaction", "production-science-pack")
+util.remove_prerequisite("coal-liquefaction", "advanced-oil-processing")
