@@ -4,20 +4,27 @@ local noise = require('noise');
 local util = require("data-util");
 
 if util.me.platinum() or util.me.palladium() then
-if mods.Krastorio2 then
+if mods.Krastorio2 then -- no rich copper
+
   util.multiply_recipe("rare-metals", 2)
   util.multiply_recipe("rare-metals-2", 2)
 
   util.set_main_product("rare-metals", "rare-metals")
   util.set_main_product("rare-metals-2", "rare-metals")
 
+  util.add_product("enriched-rare-metals", {"sulfur", 1})
   if util.me.platinum() and util.me.palladium() then
-    util.replace_some_product("rare-metals",   "rare-metals", 2, "platinum-powder",  2, {force=true})
-    util.replace_some_product("rare-metals",   "rare-metals", 2, "palladium-powder", 2, {force=true})
-    util.replace_some_product("rare-metals-2", "rare-metals", 3, "platinum-powder",  3, {force=true})
-    util.replace_some_product("rare-metals-2", "rare-metals", 3, "palladium-powder", 3, {force=true})
+    util.replace_some_product("rare-metals",   "rare-metals", 2, "platinum-ingot",  2, {force=true})
+    util.replace_some_product("rare-metals",   "rare-metals", 2, "palladium-ingot", 2, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 3, "platinum-ingot",  3, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 3, "palladium-ingot", 3, {force=true})
+  elseif util.me.platinum() then
+    util.replace_some_product("rare-metals",   "rare-metals", 3, "platinum-ingot",  3, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 6, "platinum-ingot",  6, {force=true})
+  elseif util.me.palladium() then
+    util.replace_some_product("rare-metals",   "rare-metals", 3, "palladium-ingot", 3, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 6, "palladium-ingot", 6, {force=true})
   end
-
 else
 
 local results = {}
