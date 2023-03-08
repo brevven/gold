@@ -4,9 +4,11 @@ Date: 2023-03-01
   Features:
     - Alpha release.
     - Adds gold, silver, platinum and palladium
+    - Adds some intermediate items
+    - Updates processing units production chain
     - Optionally adds catalysis recipes
-    - Compatible with Krastorio 2
-    - Compatible with Space Exploration
+    - Compatible with Krastorio 2 (more to come)
+    - Compatible with Space Exploration (more to come)
     - Compatible with Bob's Electronics
     - Compatible with deadlock stacking/crating
     - Compatible with many other mods

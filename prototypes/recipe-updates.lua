@@ -1,3 +1,4 @@
+local futil = require("util");
 local util = require("data-util")
 
 -- K2 silver from copper
@@ -9,11 +10,13 @@ end
 if mods.bztitanium then
   util.replace_ingredient("heat-exchanger", util.titanium_plate, "titanium-palladium-flange")
   util.replace_some_ingredient("steam-turbine", util.titanium_plate, 10, "titanium-palladium-flange", 10)
+  util.replace_some_ingredient("kr-advanced-steam-turbine", util.titanium_plate, 10, "titanium-palladium-flange", 10)
 else
   util.add_ingredient("heat-exchanger", "titanium-palladium-flange", 10)
   util.add_ingredient("steam-turbine", "titanium-palladium-flange", 10)
-  util.add_ingredient("rocket-silo", "titanium-palladium-flange", 100)
+  util.add_ingredient("kr-advanced-steam-turbine", "titanium-palladium-flange", 10)
 end
+util.add_ingredient("rocket-silo", "titanium-palladium-flange", 100)
 
 util.add_ingredient("rocket-control-unit", "temperature-sensor", 1)
 if not mods["aai-industry"] then
@@ -34,7 +37,32 @@ util.add_ingredient("chemical-plant", "silver-brazing-alloy", 5)
 util.add_ingredient("chemical-plant", "silver-plate", 5)
 util.replace_ingredient("oil-refinery", "solder", "silver-brazing-alloy")
 util.add_ingredient("oil-refinery", "silver-brazing-alloy", 5)
+util.add_ingredient("rocket-silo", "silver-brazing-alloy", 100)
 
 util.multiply_recipe("solar-cell", 2)
 util.replace_ingredient("solar-cell", "lead-plate", "silver-plate", 1)
 util.add_ingredient("solar-cell", "silver-plate", 1)
+
+-- K2
+
+util.add_ingredient("kr-bio-lab", "silver-plate", 1)
+
+if util.me.palladium() then
+  util.add_ingredient("additional-engine", "palladium-ingot", 1)
+elseif util.me.platinum() then
+  util.add_ingredient("additional-engine", "platinum-ingot", 1)
+end
+
+-- K2 blank tech card
+if util.me.silver() then
+  local tc = futil.table.deepcopy(data.raw.recipe["blank-tech-card"])
+  tc.name = "blank-tech-card-silver"
+  data:extend({tc})
+  util.replace_ingredient("blank-tech-card-silver", "copper-wire", "silver-wire")
+  util.set_product_amount("blank-tech-card-silver", "blank-tech-card", 3)
+  util.add_icon("blank-tech-card-silver", {
+    icon = "__bzgold__/graphics/icons/silver-wire.png",
+    icon_size = 64, icon_mipmaps = 4, scale = 0.25, shift = {8,-8}
+  })
+  util.add_unlock("silver-processing", "blank-tech-card-silver")
+end
