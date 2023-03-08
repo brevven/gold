@@ -17,7 +17,7 @@ data:extend({
     type = "recipe",
     name = "cpu",
     category = "crafting-with-fluid",
-    order = "d[mainboard]",
+    order = "d[cpu]",
     enabled = false,
     energy_required = 50,
     ingredients = {
