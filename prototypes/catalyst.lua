@@ -26,6 +26,10 @@ if util.me.catalysis() then
           icon = "__base__/graphics/technology/oil-processing.png",
           icon_size = 256,
         },
+        {
+          icon = "__bzgold__/graphics/icons/ptpd-catalyst.png",
+          icon_size = 128, shift={0,20}
+        },
       },
       effects = {},
       unit = {
