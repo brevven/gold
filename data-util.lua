@@ -312,7 +312,7 @@ function util.add_unlock(technology_name, recipe)
 end
 
 -- Check if a tech unlocks a recipe
-function util.check_unlock(technology_name, recipe)
+function util.check_unlock(technology_name, recipe_name)
   local technology = data.raw.technology[technology_name]
   if technology and technology.effects then
     for i, effect in pairs(technology.effects) do
@@ -983,11 +983,27 @@ function util.add_icon(recipe_name, icon, options)
   if data.raw.recipe[recipe_name] then
     me.add_modified(recipe_name)
     if not (data.raw.recipe[recipe_name].icons and #(data.raw.recipe[recipe_name].icons) > 0) then
-      data.raw.recipe[recipe_name].icons = {{
-        icon=data.raw.recipe[recipe_name].icon,
-        icon_size=data.raw.recipe[recipe_name].icon_size,
-        icon_mipmaps=data.raw.recipe[recipe_name].icon_mipmaps,
-      }}
+      log("BZZN")
+      log(serpent.dump(data.raw.recipe[recipe_name]))
+      if data.raw.recipe[recipe_name].icon then
+        data.raw.recipe[recipe_name].icons = {{
+          icon=data.raw.recipe[recipe_name].icon,
+          icon_size=data.raw.recipe[recipe_name].icon_size,
+          icon_mipmaps=data.raw.recipe[recipe_name].icon_mipmaps,
+        }}
+      elseif data.raw.item[data.raw.recipe[recipe_name].main_product] then
+        data.raw.recipe[recipe_name].icons = {{
+          icon=data.raw.item[data.raw.recipe[recipe_name].main_product].icon,
+          icon_size=data.raw.item[data.raw.recipe[recipe_name].main_product].icon_size,
+          icon_mipmaps=data.raw.item[data.raw.recipe[recipe_name].main_product].icon_mipmaps,
+        }}
+      elseif data.raw.item[data.raw.recipe[recipe_name].result] then
+        data.raw.recipe[recipe_name].icons = {{
+          icon=data.raw.item[data.raw.recipe[recipe_name].result].icon,
+          icon_size=data.raw.item[data.raw.recipe[recipe_name].result].icon_size,
+          icon_mipmaps=data.raw.item[data.raw.recipe[recipe_name].result].icon_mipmaps,
+        }}
+      end
       data.raw.recipe[recipe_name].icon = nil
       data.raw.recipe[recipe_name].icon_size = nil
     end
