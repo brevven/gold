@@ -1,6 +1,8 @@
 local futil = require("util");
 local util = require("data-util");
 
+
+-- alternate electronic circuit recipe that uses silver
 local ec = futil.table.deepcopy(data.raw.recipe["electronic-circuit"])
 ec.name = "electronic-circuit-silver"
 data:extend({ec})
@@ -12,7 +14,7 @@ util.set_icons("electronic-circuit-silver", {
         },
         {
           icon = "__bzgold__/graphics/icons/silver-wire.png",
-          icon_size = 64, icon_mipmaps = 4, scale = 0.25, shift = {8,8}
+          icon_size = 64, icon_mipmaps = 4, scale = 0.25, shift = {8,-8}
         },
 })
 if util.check_unlock("electronics", "electronic-circuit") then
