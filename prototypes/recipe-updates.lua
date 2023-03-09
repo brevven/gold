@@ -46,6 +46,8 @@ util.add_ingredient("solar-cell", "silver-plate", 1)
 -- K2
 
 util.add_ingredient("kr-bio-lab", "silver-plate", 1)
+util.add_ingredient("kr-quantum-computer", "mlcc", 50)
+
 
 if util.me.palladium() then
   util.add_ingredient("additional-engine", "palladium-ingot", 1)

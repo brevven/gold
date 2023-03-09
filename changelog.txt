@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
-Date: 2023-03-01
+Date: 2023-03-09
   Features:
-    - Alpha release.
+    - Early alpha release, incomplete.
     - Adds gold, silver, platinum and palladium
     - Adds some intermediate items
     - Updates processing units production chain

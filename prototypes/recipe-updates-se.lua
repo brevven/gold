@@ -26,6 +26,10 @@ util.add_ingredient("se-big-turbine", "titanium-palladium-flange", 50)
 util.add_ingredient("se-heavy-assembly", "silver-brazing-alloy", 1)
 util.add_ingredient("se-space-assembling-machine", "silver-brazing-alloy", 2)
 
+util.add_ingredient("se-space-thermodynamics-laboratory", "temperature-sensor", 20)
+util.add_ingredient("se-space-space-hypercooler", "temperature-sensor", 20)
+util.add_ingredient("se-space-space-radiator", "temperature-sensor", 10)
+
 if util.me.silver() then
   util.add_ingredient("se-space-decontamination-facility", "silver-plate", 5)
   util.add_ingredient("se-space-decontamination-facility", "silver-brazing-alloy", 5)
