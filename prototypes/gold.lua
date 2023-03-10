@@ -1,14 +1,5 @@
 local util = require("data-util");
 
-local results = {{"gold-ingot", 1}}
-
-if util.me.silver() and util.me.byproduct() then
-  results = {
-    {type = "item", name="gold-ingot", amount=1, probability=.9},
-    {type = "item", name="silver-ore", amount=1, probability=.1},
-  }
-end
-
 data:extend({
   {
     type = "item",
@@ -18,17 +9,6 @@ data:extend({
     subgroup = "raw-resource",
     order = "b[gold-ingot]",
     stack_size = util.get_stack_size(100),
-  },
-  {
-    type = "recipe",
-    name = "gold-ingot",
-    main_product = "gold-ingot",
-    category = "smelting",
-    order = "d[gold-ingot]",
-    enabled = false,
-    energy_required = 1.6,
-    ingredients = {{"gold-ore", 1}},
-    results = results,
   },
   {
     type = "technology",
@@ -54,3 +34,48 @@ data:extend({
     order = "b-b",
   },
 })
+
+if mods.Krastorio2 then
+  local results = {{"gold-ingot", 5}}
+  if util.me.silver() and util.me.byproduct() then
+    results = {
+      {type = "item", name="gold-ingot", amount=4},
+      {type = "item", name="silver-ore", amount=2},
+    }
+  end
+  data:extend({
+    {
+      type = "recipe",
+      name = "gold-ingot",
+      main_product = "gold-ingot",
+      category = "smelting",
+      order = "d[gold-ingot]",
+      enabled = false,
+      energy_required = 8,
+      ingredients = {{"gold-ore", 20}},
+      results = results,
+    },
+  })
+else
+  local results = {{"gold-ingot", 1}}
+  if util.me.silver() and util.me.byproduct() then
+    results = {
+      {type = "item", name="gold-ingot", amount=1, probability=.9},
+      {type = "item", name="silver-ore", amount=1, probability=.2},
+    }
+  end
+
+  data:extend({
+    {
+      type = "recipe",
+      name = "gold-ingot",
+      main_product = "gold-ingot",
+      category = "smelting",
+      order = "d[gold-ingot]",
+      enabled = false,
+      energy_required = 1.6,
+      ingredients = {{"gold-ore", 2}},
+      results = results,
+    },
+  })
+end
