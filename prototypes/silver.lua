@@ -15,7 +15,7 @@ if util.me.silver() then
         {filename="__bzgold__/graphics/icons/silver-ore-4.png", size=128, scale=0.125},
       },
       subgroup = "raw-resource",
-      order = "b[silver-plate]",
+      order = "a[silver-ore]",
       stack_size = util.get_stack_size(200),
     },
   })
@@ -29,7 +29,16 @@ if util.me.silver() then
       order = "b[silver-plate]",
       stack_size = util.get_stack_size(100),
     },
-    {
+    mods.Krastorio2 and {
+      type = "recipe",
+      name = "silver-plate",
+      category = "smelting",
+      order = "d[silver-plate]",
+      enabled = false,
+      energy_required = 8,
+      ingredients = {{"silver-ore", 10}},
+      results = {{"silver-plate", 5}},
+    } or {
       type = "recipe",
       name = "silver-plate",
       category = "smelting",
@@ -90,7 +99,7 @@ if util.me.silver() then
       enabled = false,
       energy_required = 1,
       ingredients = brazing,
-      results = {{"silver-brazing-alloy", 4}},
+      results = {{"silver-brazing-alloy", 1}},
     },
   })
 
