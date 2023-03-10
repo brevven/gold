@@ -2,11 +2,7 @@ local util = require("data-util")
 
 util.add_prerequisite("advanced-electronics", "silver-processing")
 util.add_prerequisite("solar-energy", "silver-processing")
-if mods.Krastorio2 or mods["aai-industry"] then
-  util.add_prerequisite("oil-processing", "silver-processing")
-else
-  util.add_prerequisite("oil-processing", "silver-processing")
-end
+util.add_prerequisite("oil-processing", "silver-processing")
 
 util.add_prerequisite("gas-extraction", "silver-processing")
 
