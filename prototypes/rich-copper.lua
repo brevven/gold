@@ -12,18 +12,17 @@ if mods.Krastorio2 then -- no rich copper
   util.set_main_product("rare-metals", "rare-metals")
   util.set_main_product("rare-metals-2", "rare-metals")
 
-  util.add_product("enriched-rare-metals", {"sulfur", 1})
   if util.me.platinum() and util.me.palladium() then
-    util.replace_some_product("rare-metals",   "rare-metals", 2, "platinum-ingot",  2, {force=true})
-    util.replace_some_product("rare-metals",   "rare-metals", 2, "palladium-ingot", 2, {force=true})
-    util.replace_some_product("rare-metals-2", "rare-metals", 3, "platinum-ingot",  3, {force=true})
-    util.replace_some_product("rare-metals-2", "rare-metals", 3, "palladium-ingot", 3, {force=true})
+    util.replace_some_product("rare-metals",   "rare-metals", 2, "platinum-powder",  2, {force=true})
+    util.replace_some_product("rare-metals",   "rare-metals", 2, "palladium-powder", 2, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 3, "platinum-powder",  3, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 3, "palladium-powder", 3, {force=true})
   elseif util.me.platinum() then
-    util.replace_some_product("rare-metals",   "rare-metals", 3, "platinum-ingot",  3, {force=true})
-    util.replace_some_product("rare-metals-2", "rare-metals", 6, "platinum-ingot",  6, {force=true})
+    util.replace_some_product("rare-metals",   "rare-metals", 3, "platinum-powder",  3, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 6, "platinum-powder",  6, {force=true})
   elseif util.me.palladium() then
-    util.replace_some_product("rare-metals",   "rare-metals", 3, "palladium-ingot", 3, {force=true})
-    util.replace_some_product("rare-metals-2", "rare-metals", 6, "palladium-ingot", 6, {force=true})
+    util.replace_some_product("rare-metals",   "rare-metals", 3, "palladium-powder", 3, {force=true})
+    util.replace_some_product("rare-metals-2", "rare-metals", 6, "palladium-powder", 6, {force=true})
   end
 else
 
@@ -91,23 +90,28 @@ if data.raw.resource["copper-ore"] then
   end
 end
 
+if util.se6() then
+  data:extend({
+    {
+      type = "autoplace-control",
+      category = "resource",
+      name = "rich-copper-ore",
+      richness = true,
+      order = "zzzzzzzzzzz"
+    },
+  })
+end
+
 data:extend({
-	--{
-  --  type = "autoplace-control",
-  --  category = "resource",
-  --  name = "rich-copper-ore",
-  --  richness = true,
-  --  order = "b-e"
-	--},
 	{
     type = "noise-layer",
     name = "rich-copper-ore"
 	},
 	{
     type = "resource",
-    icon_size = 64, icon_mipmaps = 3,
     name = "rich-copper-ore",
     icon = "__bzgold__/graphics/icons/rich-copper-ore.png",
+    icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-neutral"},
     order="a-b-a",
     map_color = {r=0.9, g=0.5, b=0.4},
@@ -125,11 +129,11 @@ data:extend({
 
     autoplace = resource_autoplace.resource_autoplace_settings{
       name = "rich-copper-ore",
-      autoplace_control_name = "copper-ore",
+      autoplace_control_name = util.se6() and "rich-copper-ore" or "copper-ore",
       order = "b-z",
       base_density = 4,
       base_spots_per_km2 = 1,
-      has_starting_area_placement = true, -- TODO CHANGE THIS
+      has_starting_area_placement = false,
       regular_rq_factor_multiplier = 1,
       starting_rq_factor_multiplier = 1,
     },
@@ -196,5 +200,14 @@ data:extend({
 })
 util.add_unlock("platinum-processing", "rich-copper")
 util.add_unlock("palladium-processing", "rich-copper")
+
+if util.se6() then
+  se_resources["rich-copper-ore"] = {
+    order = "b-z-c",
+    has_starting_area_placement = false,
+    base_density = 4,
+    base_spots_per_km2 = 1,
+  }
+end
 end
 end

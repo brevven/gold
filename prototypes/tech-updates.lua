@@ -8,6 +8,8 @@ else
   util.add_prerequisite("oil-processing", "silver-processing")
 end
 
+util.add_prerequisite("gas-extraction", "silver-processing")
+
 util.add_prerequisite("advanced-electronics-2", "gold-processing")
 util.remove_prerequisite("advanced-electronics-2", "chemical-science-pack")
 util.add_prerequisite("advanced-electronics-2", "temperature-regulation")

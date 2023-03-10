@@ -32,6 +32,10 @@ util.remove_ingredient("speed-module-3", "cermet")
 util.remove_ingredient("effectivity-module-3", "cermet")
 util.remove_ingredient("productivity-module-3", "cermet")
 
+util.add_ingredient("gas-extractor", "silver-brazing-alloy", 5)
+util.add_ingredient("pumpjack", "silver-brazing-alloy", 5)
+util.add_ingredient("assembling-machine-2", "silver-brazing-alloy", 1)
+util.add_ingredient("basic-chemical-plant", "silver-brazing-alloy", 5)
 util.replace_ingredient("chemical-plant", "solder", "silver-brazing-alloy")
 util.add_ingredient("chemical-plant", "silver-brazing-alloy", 5)
 util.add_ingredient("chemical-plant", "silver-plate", 5)
@@ -43,8 +47,12 @@ util.multiply_recipe("solar-cell", 2)
 util.replace_ingredient("solar-cell", "lead-plate", "silver-plate", 1)
 util.add_ingredient("solar-cell", "silver-plate", 1)
 
--- K2
+util.add_ingredient("satellite", "gold-ingot", 10)
 
+util.add_ingredient("jet", "platinum-ingot", 10)
+util.add_ingredient("flying-fortress", "platinum-ingot", 10)
+
+-- K2
 util.add_ingredient("kr-bio-lab", "silver-plate", 1)
 util.add_ingredient("kr-quantum-computer", "mlcc", 50)
 
@@ -56,7 +64,7 @@ elseif util.me.platinum() then
 end
 
 -- K2 blank tech card
-if util.me.silver() then
+if mods.Krastorio2 and util.me.silver() then
   local tc = futil.table.deepcopy(data.raw.recipe["blank-tech-card"])
   tc.name = "blank-tech-card-silver"
   data:extend({tc})
