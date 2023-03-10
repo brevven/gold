@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
-Date: 2023-03-09
+Date: 2023-03-10
   Features:
     - Early alpha release, incomplete.
     - Adds gold, silver, platinum and palladium
@@ -12,3 +12,9 @@ Date: 2023-03-09
     - Compatible with Bob's Electronics
     - Compatible with deadlock stacking/crating
     - Compatible with many other mods
+  Known issues:
+    - Gameplay balance is not tuned.
+    - In Space Exploration, gold ore (and rich copper ore, without K2) will show up on Nauvis
+      They should eventually only show up off of Nauvis.
+    - Enriched ores need better graphics.
+    - Some mod setting configurations don't currently work.

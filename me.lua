@@ -5,7 +5,7 @@ me.list = {}
 me.recipes = {
   "electronic-circuit-silver", "silver-plate", "silver-wire",
   "gold-ingot", "platinum-ingot", "palladium-ingot",
-  "temperature-sensor", "mlcc",
+  "temperature-sensor", "mlcc", "silver-brazing-alloy", "titanium-palladium-flange",
 }
 
 function me.byproduct()

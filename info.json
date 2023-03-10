@@ -17,7 +17,7 @@
       "? bztin >= 0.1.8",
       "? bzgas",
       "? bzchlorine",
-      "? space-exploration >= 0.5.100",
+      "? space-exploration >= 0.6.0",
       "? aai-industry",
       "(?) aai-loaders",
       "? Krastorio2",
@@ -26,5 +26,5 @@
       "? deadlock-beltboxes-loaders",
       "? DeadlockCrating"
     ],
-    "description": "Adds silver, gold, platinum, palladium and more to the base game. Reworks processing units.\n\nCompatible with Krastorio 2 and Space Exploration. A standalone piece of BZ Mods."
+    "description": "(Alpha release, buggy, anything can change, more to come, etc) Adds silver, gold, platinum, palladium and more to the base game. Reworks processing units.\n\nCompatible with Krastorio 2 and Space Exploration. A standalone piece of BZ Mods."
 }

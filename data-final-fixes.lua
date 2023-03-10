@@ -7,10 +7,12 @@ require("modules")
 local util = require("data-util");
 
 if mods["space-exploration"] then 
-  -- core mining balancing
+  util.remove_product("se-core-fragment-omni", "gold-ore")
+  util.remove_product("se-core-fragment-omni", "rich-copper-ore")
   -- util.add_to_product("se-core-fragment-omni", "salt", -5)
 end
 
+-- these need to be in final fixes for one reason or another
 util.replace_ingredient("textplate-small-gold", "sulfur", "gold-ingot")
 util.replace_ingredient("textplate-large-gold", "sulfur", "gold-ingot")
 

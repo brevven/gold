@@ -9,7 +9,12 @@ require("prototypes/mlcc")
 require("prototypes/cpu")
 require("prototypes/mainboard")
 require("prototypes/catalyst")
+require("prototypes/recipes-se")
 require("cables")
+require("prototypes/enriched-silver")
+require("prototypes/enriched-gold")
+require("prototypes/pyroflux-gold")
+require("prototypes/pyroflux-silver")
 
 local util = require("data-util");
 
