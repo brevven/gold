@@ -6,6 +6,10 @@ me.recipes = {
   "electronic-circuit-silver", "silver-plate", "silver-wire",
   "gold-ingot", "platinum-ingot", "palladium-ingot",
   "temperature-sensor", "mlcc", "silver-brazing-alloy", "titanium-palladium-flange",
+  --k2
+  "enriched-silver", "enriched-gold", "enriched-silver-plate", "enriched-gold-ingot",
+  --se
+  "molten-silver", "molten-gold",
 }
 
 function me.byproduct()
