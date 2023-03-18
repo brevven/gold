@@ -1,7 +1,11 @@
 local util = require("data-util");
 
-if mods.bzsilicon then
-local silicon = data.raw.item["silicon-wafer"] and {"silicon-wafer", 30} or {"silicon", 15}
+local silicon = {"stone", 30}
+if data.raw.item["sand"] then
+  local silicon = {"sand", 30}
+elseif mods.bzsilicon then
+  silicon = data.raw.item["silicon-wafer"] and {"silicon-wafer", 30} or {"silicon", 15}
+end
 local spreader = data.raw.item["cuw"] and {"cuw", 2} or {"copper-plate", 2}
 data:extend({
   {
@@ -56,4 +60,3 @@ end
 
 util.replace_ingredient("cpu", "electronic-circuit", "pcb", 10, false, {"force", true})
 util.replace_ingredient("cpu-holmium", "electronic-circuit", "pcb", 20, false, {"force", true})
-end
