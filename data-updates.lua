@@ -4,7 +4,6 @@ require("prototypes/recipe-updates")
 require("prototypes/recipe-updates-se")
 require("map-gen-preset-updates")
 require("compatibility/crafting-efficiency")
-require("prototypes/oil-updates")
 require("matter")
 
 -- require("strange-matter")
