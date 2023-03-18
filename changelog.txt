@@ -1,9 +1,31 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+Date: 2023-03-18
+  Fixes:
+    - More locale strings (en)
+    - K2, SE: Prod modules for alternate smelting chains
+  Changes:
+    - Recipe balance changes
+    - K2: Early rare metals recipe does not output noble metals
+    - SE: Post-rocket techs require rocket science packs
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 2023-03-14
+  Changes:
+    - K2: Fix some recipes
+    - SE: A bit more minor smoothing of progression
+    - K2SE: Matter updates
+  Fixes:
+    - SE: Fix some recipe building issues, eg alternate solid fuel recipes
+    - Fix some more mod load issues, as well as further playability compatibility
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
-Date: 2023-03-11
+Date: 2023-03-13
   Fixes:
     - Fix and add several en locale strings
   Changes:
+    - Rebalance silver brazing alloy
+    - SE: Smooth progression around processing units and switch around some recipes
     - SE: Alternate production chain for processing units using holmium
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
