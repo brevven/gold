@@ -1,27 +1,40 @@
 local resource_autoplace = require('resource-autoplace');
 local noise = require('noise');
+local futil = require("util");
 
 local util = require("data-util");
 
 if util.me.platinum() or util.me.palladium() then
-if mods.Krastorio2 then -- no rich copper
+if mods.Krastorio2 then
+  -- no rich copper
+  local rm = futil.table.deepcopy(data.raw.recipe["rare-metals"])
+  rm.name = "rare-metals-1"
+  data:extend({rm})
+  util.add_unlock("platinum-processing", "rare-metals-1")
+  util.add_unlock("palladium-processing", "rare-metals-1")
+  util.add_icon("rare-metals-1", {icon = "__bzgold__/graphics/icons/platinum-powder.png",
+                                  icon_size = 64, scale = 0.25, shift = {-8,8}})
 
   util.multiply_recipe("rare-metals", 2)
+  util.multiply_recipe("rare-metals-1", 2)
   util.multiply_recipe("rare-metals-2", 2)
 
   util.set_main_product("rare-metals", "rare-metals")
+  util.set_product_amount("rare-metals", "rare-metals", 6)
+  util.set_main_product("rare-metals-1", "rare-metals")
   util.set_main_product("rare-metals-2", "rare-metals")
 
+
   if util.me.platinum() and util.me.palladium() then
-    util.replace_some_product("rare-metals",   "rare-metals", 2, "platinum-powder",  2, {force=true})
-    util.replace_some_product("rare-metals",   "rare-metals", 2, "palladium-powder", 2, {force=true})
+    util.replace_some_product("rare-metals-1", "rare-metals", 2, "platinum-powder",  2, {force=true})
+    util.replace_some_product("rare-metals-1", "rare-metals", 2, "palladium-powder", 2, {force=true})
     util.replace_some_product("rare-metals-2", "rare-metals", 3, "platinum-powder",  3, {force=true})
     util.replace_some_product("rare-metals-2", "rare-metals", 3, "palladium-powder", 3, {force=true})
   elseif util.me.platinum() then
-    util.replace_some_product("rare-metals",   "rare-metals", 3, "platinum-powder",  3, {force=true})
+    util.replace_some_product("rare-metals-1", "rare-metals", 3, "platinum-powder",  4, {force=true})
     util.replace_some_product("rare-metals-2", "rare-metals", 6, "platinum-powder",  6, {force=true})
   elseif util.me.palladium() then
-    util.replace_some_product("rare-metals",   "rare-metals", 3, "palladium-powder", 3, {force=true})
+    util.replace_some_product("rare-metals-1", "rare-metals", 3, "palladium-powder", 4, {force=true})
     util.replace_some_product("rare-metals-2", "rare-metals", 6, "palladium-powder", 6, {force=true})
   end
 else
