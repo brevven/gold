@@ -51,7 +51,13 @@ data:extend({
     },
     unit = {
       count = 50, time = 30,
-      ingredients = {
+      ingredients = util.se6() and 
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"se-rocket-science-pack", 1},
+      } or {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
         {"chemical-science-pack", 1},
