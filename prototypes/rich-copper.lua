@@ -115,6 +115,8 @@ data:extend({
     flags = {"placeable-neutral"},
     order="a-b-a",
     map_color = {r=0.9, g=0.5, b=0.4},
+    tree_removal_probability = 0.7,
+    tree_removal_max_distance = 32 * 32,
     minable =
     {
       hardness = 1,
