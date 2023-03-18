@@ -2,6 +2,19 @@ local futil = require("util");
 local util = require("data-util")
 
 if util.se6() then
+  util.replace_ingredient("se-rocket-launch-pad", "processing-unit", "rocket-control-unit")
+  util.replace_ingredient("se-space-assembling-machine", "processing-unit", "advanced-circuit", 8)
+  util.replace_ingredient("space-science-pack", "processing-unit", "advanced-circuit", 5)
+  util.replace_ingredient("se-meteor-defence", "processing-unit", "advanced-circuit", 200)
+  util.replace_ingredient("se-energy-beam-defence", "processing-unit", "advanced-circuit", 200)
+  util.replace_ingredient("se-space-decontamination-facility", "processing-unit", "advanced-circuit", 20)
+  util.replace_ingredient("se-space-supercomputer-1", "processing-unit", "advanced-circuit", 200)
+  util.replace_ingredient("se-space-science-lab", "processing-unit", "advanced-circuit", 100)
+
+  util.remove_prerequisite("se-meteor-defence", "advanced-electronics-2")
+  util.add_prerequisite("se-meteor-defence", "se-rocket-science-pack")
+
+
   if util.me.silver() then
     util.replace_ingredient("se-nutrient-vat", "iron-plate", "silver-plate")
   else
@@ -23,8 +36,9 @@ if util.se6() then
   util.replace_ingredient("se-condenser-turbine", util.titanium_plate, "titanium-palladium-flange")
   util.add_ingredient("se-condenser-turbine", "titanium-palladium-flange", 10)
   util.add_ingredient("se-big-turbine", "titanium-palladium-flange", 50)
-  util.add_ingredient("se-heavy-assembly", "silver-brazing-alloy", 1)
-  util.add_ingredient("se-space-assembling-machine", "silver-brazing-alloy", 2)
+  util.add_ingredient("se-heavy-assembly", "silver-brazing-alloy", 4)
+  util.add_ingredient("se-space-assembling-machine", "silver-brazing-alloy", 8)
+  util.replace_ingredient("se-space-pipe", "copper-cable", "silver-brazing-alloy")
 
   util.add_ingredient("se-space-thermodynamics-laboratory", "temperature-sensor", 20)
   util.add_ingredient("se-space-space-hypercooler", "temperature-sensor", 20)
@@ -35,16 +49,17 @@ if util.se6() then
 
   if util.me.silver() then
     util.add_ingredient("se-space-decontamination-facility", "silver-plate", 5)
-    util.add_ingredient("se-space-decontamination-facility", "silver-brazing-alloy", 5)
-  else
-    util.add_ingredient("se-space-decontamination-facility", "gold-ingot", 1)
   end
 
 
   util.multiply_recipe("se-bioscrubber", 10)
-  util.replace_some_ingredient("se-bioscrubber", "steel-plate", 10, "palladium-ingot", 1)
-  util.replace_some_ingredient("se-bioscrubber", "steel-plate", 10, "platinum-ingot", 1)
-  util.replace_some_ingredient("se-bioscrubber", "steel-plate", 10, "silver-plate", 10)
+  if util.me.palladium() then
+    util.replace_some_ingredient("se-bioscrubber", "steel-plate", 10, "palladium-ingot", 2)
+  elseif util.me.platinum() then
+    util.replace_some_ingredient("se-bioscrubber", "steel-plate", 10, "platinum-ingot", 2)
+  else
+    util.replace_some_ingredient("se-bioscrubber", "steel-plate", 10, "silver-plate", 10)
+  end
 
   if util.me.platinum() then
     util.add_ingredient("se-bioelectrics-data", "platinum-ingot", 1)

@@ -32,22 +32,25 @@ util.remove_ingredient("speed-module-3", "cermet")
 util.remove_ingredient("effectivity-module-3", "cermet")
 util.remove_ingredient("productivity-module-3", "cermet")
 
-util.add_ingredient("gas-extractor", "silver-brazing-alloy", 5)
-util.add_ingredient("pumpjack", "silver-brazing-alloy", 5)
-util.add_ingredient("assembling-machine-2", "silver-brazing-alloy", 1)
+util.add_ingredient("gas-extractor", "silver-brazing-alloy", 10)
+util.add_ingredient("pumpjack", "silver-brazing-alloy", 10)
+util.add_ingredient("kr-mineral-water-pumpjack", "silver-brazing-alloy", 5)
+util.add_ingredient("assembling-machine-2", "silver-brazing-alloy", 5)
 util.add_ingredient("basic-chemical-plant", "silver-brazing-alloy", 5)
 util.replace_ingredient("chemical-plant", "solder", "silver-brazing-alloy")
-util.add_ingredient("chemical-plant", "silver-brazing-alloy", 5)
+util.add_ingredient("chemical-plant", "silver-brazing-alloy", 20)
 util.add_ingredient("chemical-plant", "silver-plate", 5)
 util.replace_ingredient("oil-refinery", "solder", "silver-brazing-alloy")
-util.add_ingredient("oil-refinery", "silver-brazing-alloy", 5)
+util.add_ingredient("oil-refinery", "silver-brazing-alloy", 20)
 util.add_ingredient("rocket-silo", "silver-brazing-alloy", 100)
 
 util.multiply_recipe("solar-cell", 2)
 util.replace_ingredient("solar-cell", "lead-plate", "silver-plate", 1)
 util.add_ingredient("solar-cell", "silver-plate", 1)
 
-util.add_ingredient("satellite", "gold-ingot", 10)
+if not util.se6() then
+  util.add_ingredient("satellite", "gold-ingot", 10)
+end
 
 util.add_ingredient("jet", "platinum-ingot", 10)
 util.add_ingredient("flying-fortress", "platinum-ingot", 10)
@@ -68,8 +71,9 @@ if mods.Krastorio2 and util.me.silver() then
   local tc = futil.table.deepcopy(data.raw.recipe["blank-tech-card"])
   tc.name = "blank-tech-card-silver"
   data:extend({tc})
-  util.replace_ingredient("blank-tech-card-silver", "copper-wire", "silver-wire")
-  util.set_product_amount("blank-tech-card-silver", "blank-tech-card", 3)
+  util.replace_ingredient("blank-tech-card-silver", "copper-cable", "silver-wire")
+  local amt = util.get_amount("blank-tech-card")
+  util.set_product_amount("blank-tech-card-silver", "blank-tech-card", amt)
   util.add_icon("blank-tech-card-silver", {
     icon = "__bzgold__/graphics/icons/silver-wire.png",
     icon_size = 64, icon_mipmaps = 4, scale = 0.25, shift = {8,-8}
