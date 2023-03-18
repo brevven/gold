@@ -8,17 +8,22 @@ Adds gold, silver, platinum and palladium to the game. Reworks processing units 
 See changelog.txt
 
 ## Created by
-
 - [brevven](https://mods.factorio.com/user/brevven) (code, design, graphics)
 
 ## Thanks to 
-- [snouz](https://github.com/snouz) (logo inspiration)
-- [nihilistzsche](https://mods.factorio.com/user/nihilistzsche) (improvements to crafting efficiency compatibility)
-
-
+- [snouz](https://github.com/snouz) (inspiration for logo)
 
 
 ### Localization
 
 
 ### Testing
+- Sakuro
+- Fuuryuu
+- Shadowreaper
+- Baisius
+- agmech
+- Wonder Ginger
+- GeneralTank
+- JonathanF
+- Berkelear
