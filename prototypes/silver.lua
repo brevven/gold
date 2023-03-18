@@ -97,9 +97,9 @@ if util.me.silver() then
       category = "crafting",
       order = "d[silver-brazing-alloy]",
       enabled = false,
-      energy_required = 1,
+      energy_required = 4,
       ingredients = brazing,
-      results = {{"silver-brazing-alloy", 1}},
+      results = {{"silver-brazing-alloy", 4}},
     },
   })
 
