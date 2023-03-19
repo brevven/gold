@@ -1,6 +1,6 @@
 {
     "name": "bzgold",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "factorio_version": "1.1",
     "title": "Noble Metals",
     "author": "Brevven",
@@ -23,6 +23,7 @@
       "? Krastorio2",
       "? bobelectronics",
       "? MDbobelectronics",
+      "? modmashsplintergold",
       "? deadlock-beltboxes-loaders",
       "? DeadlockCrating"
     ],

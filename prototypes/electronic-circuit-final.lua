@@ -20,3 +20,4 @@ util.set_icons("electronic-circuit-silver", {
 if util.check_unlock("electronics", "electronic-circuit") then
   util.add_unlock("electronics", "electronic-circuit-silver")
 end
+
