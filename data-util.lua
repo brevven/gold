@@ -559,7 +559,7 @@ function util.get_ingredient_amount(recipe_name, ingredient_name)
         if ingredient.name == ingredient_name then return ingredient.amount end
       end
     end
-    return 1
+    return 0
   end
   return 0
 end
@@ -1257,7 +1257,7 @@ function remove_prior_unlocks(tech, recipe)
     util.remove_recipe_effect(tech, recipe)
     if technology.prerequisites then
       for i, prerequisite in pairs(technology.prerequisites) do
-        log("BZZZ removing prior unlocks for " .. recipe .. " from " .. tech ..", checking " .. prerequisite) -- Handy Debug :|
+        -- log("BZZZ removing prior unlocks for " .. recipe .. " from " .. tech ..", checking " .. prerequisite) -- Handy Debug :|
         remove_prior_unlocks(prerequisite, recipe)
       end
     end
