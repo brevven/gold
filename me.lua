@@ -12,6 +12,10 @@ me.recipes = {
   "molten-silver", "molten-gold",
 }
 
+function me.alchemy()
+  return me.get_setting("bzgold-alchemy")
+end
+
 function me.byproduct()
   return me.get_setting("bzgold-byproduct") and not me.get_setting("bz-no-byproduct")
 end

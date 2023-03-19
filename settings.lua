@@ -50,3 +50,14 @@ data:extend({
     order = "d",
   },
 })
+if mods.bzlead then
+  data:extend({
+    {
+      type = "bool-setting",
+      name = "bzgold-alchemy",
+      setting_type = "startup",
+      default_value = false,
+      order = "e",
+    },
+  })
+end
