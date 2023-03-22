@@ -1,6 +1,6 @@
 {
     "name": "bzgold",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "factorio_version": "1.1",
     "title": "Noble Metals",
     "author": "Brevven",
@@ -27,5 +27,5 @@
       "? deadlock-beltboxes-loaders",
       "? DeadlockCrating"
     ],
-    "description": "(Alpha release, buggy, anything can change, more to come, etc) Adds silver, gold, platinum, palladium and more to the base game. Reworks processing units.\n\nCompatible with Krastorio 2 and Space Exploration. A standalone piece of BZ Mods."
+    "description": "(Alpha release, anything can change, more to come, etc) Adds silver, gold, platinum, palladium and more to the base game. Reworks processing units.\n\nCompatible with Krastorio 2 and Space Exploration. A standalone piece of BZ Mods."
 }
