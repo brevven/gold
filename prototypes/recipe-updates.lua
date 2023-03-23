@@ -16,7 +16,9 @@ else
   util.add_ingredient("steam-turbine", "titanium-palladium-flange", 10)
   util.add_ingredient("kr-advanced-steam-turbine", "titanium-palladium-flange", 10)
 end
-util.add_ingredient("rocket-silo", "titanium-palladium-flange", 100)
+if not mods["space-exploration"] then
+  util.add_ingredient("rocket-silo", "titanium-palladium-flange", 100)
+end
 
 util.add_ingredient("rocket-control-unit", "temperature-sensor", 1)
 if not mods["aai-industry"] then

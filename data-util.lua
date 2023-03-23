@@ -1008,7 +1008,7 @@ end
 -- Set recipe subgroup
 function util.set_subgroup(recipe_name, subgroup, options)
   if not should_force(options) and bypass(recipe_name) then return end
-  if data.raw.recipe[recipe_name] then
+  if data.raw.recipe[recipe_name] and data.raw["item-subgroup"][subgroup] then
     me.add_modified(recipe_name)
     data.raw.recipe[recipe_name].subgroup = subgroup
   end
