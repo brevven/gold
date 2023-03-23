@@ -17,6 +17,7 @@
       "? bztin >= 0.1.8",
       "? bzgas",
       "? bzchlorine",
+      "? 248k >= 1.0.29",
       "? space-exploration >= 0.6.0",
       "? aai-industry",
       "(?) aai-loaders",

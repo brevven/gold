@@ -17,6 +17,8 @@ require("prototypes/enriched-gold")
 require("prototypes/pyroflux-gold")
 require("prototypes/pyroflux-silver")
 
+require("compatibility/248k")
+
 local util = require("data-util");
 
 if util.se6() then

@@ -1257,8 +1257,10 @@ function remove_prior_unlocks(tech, recipe)
     util.remove_recipe_effect(tech, recipe)
     if technology.prerequisites then
       for i, prerequisite in pairs(technology.prerequisites) do
-        -- log("BZZZ removing prior unlocks for " .. recipe .. " from " .. tech ..", checking " .. prerequisite) -- Handy Debug :|
-        remove_prior_unlocks(prerequisite, recipe)
+        if string.sub(prerequisite, 1, 3) ~= 'ei_' then
+          -- log("BZZZ removing prior unlocks for " .. recipe .. " from " .. tech ..", checking " .. prerequisite) -- Handy Debug :|
+          remove_prior_unlocks(prerequisite, recipe)
+        end
       end
     end
   end
@@ -1299,8 +1301,10 @@ function replace_ingredients_prior_to(tech, old, new, multiplier)
     end
     if technology.prerequisites then
       for i, prerequisite in pairs(technology.prerequisites) do
-        -- log("BZZZ checking " .. prerequisite) -- Handy Debug :|
-        replace_ingredients_prior_to(prerequisite, old, new, multiplier)
+        log("BZZZ checking " .. prerequisite) -- Handy Debug :|
+        if string.sub(prerequisite, 1, 3) ~= 'ei_' then
+          replace_ingredients_prior_to(prerequisite, old, new, multiplier)
+        end
       end
     end
   end

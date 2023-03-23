@@ -12,14 +12,13 @@ Supported compatible mods:
 
 - Space Exploration & AAI
 - Krastorio 2
-- Bob's electronics
+- Bob's electronics, 248k, Mod Mash Splinter Gold
 - Deadlock stacking, crating
 
 Coming soon: RSO
-Coming soon: FE+, 5Dim's, ModMash, ScienceCostTweaker, etc.
+Coming soon: FE+, 5Dim's, ScienceCostTweaker, etc.
 
 Many other mods are compatible but not yet fully supported. Suggestions always appreciated!
-
 
 ---- 
 Special thanks to 

@@ -3,6 +3,7 @@ require("prototypes/electronic-circuit-final")
 require("modules")
 require("prototypes/oil-updates")
 require("compatibility/modmashsplintergold")
+require("compatibility/248k-final")
 -- require("tin-recipe-final-5d")
 -- require("tin-recipe-final-rrr")
 
