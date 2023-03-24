@@ -38,3 +38,4 @@ Thanks for testing
 - [GeneralTank](https://mods.factorio.com/user/GeneralTank)
 - [JonathanF](https://mods.factorio.com/user/JonathanF)
 - [Berkelear](https://mods.factorio.com/user/Berkelear)
+- [Elanu](https://mods.factorio.com/user/elanu)

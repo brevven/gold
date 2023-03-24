@@ -1,11 +1,12 @@
 local util = require("data-util");
 
 local silicon = {"stone", 30}
-if data.raw.item["sand"] then
-  local silicon = {"sand", 30}
-elseif mods.bzsilicon then
+if mods.bzsilicon or mods.Krastorio2 then
   silicon = data.raw.item["silicon-wafer"] and {"silicon-wafer", 30} or {"silicon", 15}
+elseif data.raw.item["sand"] then
+  silicon = {"sand", 30}
 end
+
 local spreader = data.raw.item["cuw"] and {"cuw", 2} or {"copper-plate", 2}
 data:extend({
   {

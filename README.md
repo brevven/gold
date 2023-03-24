@@ -18,12 +18,13 @@ See changelog.txt
 
 
 ### Testing
-- Sakuro
-- Fuuryuu
-- Shadowreaper
-- Baisius
-- agmech
-- Wonder Ginger
-- GeneralTank
-- JonathanF
-- Berkelear
+- [Sakuro](https://mods.factorio.com/user/sakuro)
+- [Fuuryuu](https://mods.factorio.com/user/fuuryuu)
+- [Shadowreaper](https://mods.factorio.com/user/shadowreaper)
+- [Baisius](https://mods.factorio.com/user/baisius)
+- [agmech](https://mods.factorio.com/user/agmech)
+- [Wonder Ginger](https://mods.factorio.com/user/WonderGinger)
+- [GeneralTank](https://mods.factorio.com/user/GeneralTank)
+- [JonathanF](https://mods.factorio.com/user/JonathanF)
+- [Berkelear](https://mods.factorio.com/user/Berkelear)
+- [Elanu](https://mods.factorio.com/user/elanu)
