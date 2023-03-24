@@ -1027,8 +1027,6 @@ function util.add_icon(recipe_name, icon, options)
   if data.raw.recipe[recipe_name] then
     me.add_modified(recipe_name)
     if not (data.raw.recipe[recipe_name].icons and #(data.raw.recipe[recipe_name].icons) > 0) then
-      log("BZZN")
-      log(serpent.dump(data.raw.recipe[recipe_name]))
       if data.raw.recipe[recipe_name].icon then
         data.raw.recipe[recipe_name].icons = {{
           icon=data.raw.recipe[recipe_name].icon,
@@ -1301,7 +1299,7 @@ function replace_ingredients_prior_to(tech, old, new, multiplier)
     end
     if technology.prerequisites then
       for i, prerequisite in pairs(technology.prerequisites) do
-        log("BZZZ checking " .. prerequisite) -- Handy Debug :|
+        -- log("BZZZ checking " .. prerequisite) -- Handy Debug :|
         if string.sub(prerequisite, 1, 3) ~= 'ei_' then
           replace_ingredients_prior_to(prerequisite, old, new, multiplier)
         end
