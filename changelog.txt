@@ -1,9 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.7
-Date: 2023-03-24
+Date: 2023-03-26
   Fixes:
     - Compatibility fixes for some loadouts
     - Fix silicon in CPUs in some loadouts
+  Features:
+    - SE: Added setting to output a very small amount of ore in Nauvis core mining, default zero.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.6
 Date: 2023-03-22

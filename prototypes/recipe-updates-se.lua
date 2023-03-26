@@ -63,16 +63,16 @@ if util.se6() then
 
   if util.me.platinum() then
     util.add_ingredient("se-bioelectrics-data", "platinum-ingot", 1)
-    util.add_product("se-bioelectrics-data", {type=item, name="platinum-ingot", amount=1, probability=.9})
+    util.add_product("se-bioelectrics-data", {type="item", name="platinum-ingot", amount=1, probability=.9})
   elseif util.me.palladium() then
     util.add_ingredient("se-bioelectrics-data", "palladium-ingot", 1)
-    util.add_product("se-bioelectrics-data", {type=item, name="palladium-ingot", amount=1, probability=.9})
+    util.add_product("se-bioelectrics-data", {type="item", name="palladium-ingot", amount=1, probability=.9})
   elseif util.me.silver() then
     util.add_ingredient("se-bioelectrics-data", "silver-plate", 1)
-    util.add_product("se-bioelectrics-data", {type=item, name="silver-plate", amount=1, probability=.8})
+    util.add_product("se-bioelectrics-data", {type="item", name="silver-plate", amount=1, probability=.8})
   else
     util.add_ingredient("se-bioelectrics-data", "gold-ingot", 1)
-    util.add_product("se-bioelectrics-data", {type=item, name="gold-ingot", amount=1, probability=.8})
+    util.add_product("se-bioelectrics-data", {type="item", name="gold-ingot", amount=1, probability=.8})
   end
 
 

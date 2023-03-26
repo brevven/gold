@@ -137,7 +137,7 @@ if util.me.silver() then
 
     -- small silver byproduct on copper, even if lead is enabled
     if not mods.Krastorio2 and util.me.byproduct() then
-      util.add_product("copper-plate", {type=item, name="silver-ore", amount=1, probability=0.1})
+      util.add_product("copper-plate", {type="item", name="silver-ore", amount=1, probability=0.1})
     end
   else
     if not mods.Krastorio2 then

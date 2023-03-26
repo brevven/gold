@@ -16,6 +16,10 @@ function me.alchemy()
   return me.get_setting("bzgold-alchemy")
 end
 
+function me.core_mining()
+  return me.get_setting("bzgold-se-core-mining")
+end
+
 function me.byproduct()
   return me.get_setting("bzgold-byproduct") and not me.get_setting("bz-no-byproduct")
 end

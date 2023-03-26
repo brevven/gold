@@ -533,13 +533,16 @@ end
 
 function add_product(recipe, product)
   if recipe ~= nil then
-    if not recipe.normal then
-      if recipe.results == nil then
-        recipe.results = {{recipe.result, recipe.result_count and recipe.result_count or 1}}
+    if (product[1] and data.raw.item[product[1]]) or 
+    (product.name and data.raw[product.type][product.name]) then
+      if not recipe.normal then
+        if recipe.results == nil then
+          recipe.results = {{recipe.result, recipe.result_count and recipe.result_count or 1}}
+        end
+        recipe.result = nil
+        recipe.result_count = nil
+        table.insert(recipe.results, product)
       end
-      recipe.result = nil
-      recipe.result_count = nil
-      table.insert(recipe.results, product)
     end
   end
 end

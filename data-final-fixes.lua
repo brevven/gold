@@ -12,7 +12,10 @@ local util = require("data-util");
 if mods["space-exploration"] then 
   util.remove_product("se-core-fragment-omni", "gold-ore")
   util.remove_product("se-core-fragment-omni", "rich-copper-ore")
-  -- util.add_to_product("se-core-fragment-omni", "salt", -5)
+  if util.me.core_mining() > 0.0 then
+    util.add_product("se-core-fragment-omni", {type="item", name="gold-ore", amount=1, probability = util.me.core_mining()})
+    util.add_product("se-core-fragment-omni", {type="item", name="rich-copper-ore", amount=2, probability = util.me.core_mining()})
+  end
 end
 
 -- these need to be in final fixes for one reason or another
