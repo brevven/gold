@@ -2,22 +2,26 @@ local futil = require("util");
 local util = require("data-util");
 
 
--- alternate electronic circuit recipe that uses silver
-local ec = futil.table.deepcopy(data.raw.recipe["electronic-circuit"])
-ec.name = "electronic-circuit-silver"
-data:extend({ec})
-util.replace_ingredient("electronic-circuit-silver", "copper-cable", "silver-wire")
-util.set_icons("electronic-circuit-silver", {
-        {
-          icon = "__base__/graphics/icons/electronic-circuit.png",
-          icon_size = 64, icon_mipmaps = 4
-        },
-        {
-          icon = "__bzgold__/graphics/icons/silver-wire.png",
-          icon_size = 64, icon_mipmaps = 4, scale = 0.25, shift = {8,-8}
-        },
-})
-if util.check_unlock("electronics", "electronic-circuit") then
-  util.add_unlock("electronics", "electronic-circuit-silver")
+if util.me.silver() then
+    -- alternate electronic circuit recipe that uses silver
+    util.set_main_product("electronic-circuit", "electronic-circuit")
+    local ec = futil.table.deepcopy(data.raw.recipe["electronic-circuit"])
+    ec.name = "electronic-circuit-silver"
+    data:extend({ec})
+    util.set_enabled("electronic-circuit-silver", false)
+    util.replace_ingredient("electronic-circuit-silver", "copper-cable", "silver-wire")
+    util.add_icon("electronic-circuit-silver", {
+      icon = "__bzgold__/graphics/icons/silver-wire.png",
+      icon_size = 64, icon_mipmaps = 4, scale = 0.3, shift = {8,-8}
+    })
+    util.add_icon("electronic-circuit", {
+      icon = "__base__/graphics/icons/copper-cable.png",
+      icon_size = 64, icon_mipmaps = 4, scale = 0.3, shift = {8,-8}
+    })
+    if util.check_unlock("electronics", "electronic-circuit") then
+      util.add_unlock("electronics", "electronic-circuit-silver")
+    else
+      util.add_unlock("silver-processing", "electronic-circuit-silver")
+    end
 end
 

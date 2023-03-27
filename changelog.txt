@@ -2,9 +2,12 @@
 Version: 0.0.9
 Date: 2023-03-27
   Fixes:
+    - When silver is disabled, do not enable an alternate electronic circuit recipe
+    - Alternate electronic circuit recipe now unlocks at appropriate time in certain mod loadouts
     - Some fixes around platinum, palladium settings
   Changes:
     - Tweak silver wire icon
+    - Tweak electronic circuit recipe icons
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.8
 Date: 2023-03-27
