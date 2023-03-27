@@ -43,11 +43,6 @@ function me.platinum()
   return me.get_setting("bzgold-platinum")
 end
 
-function me.platinum() 
-  if me.get_setting("bz-all-intermediates") then return true end
-  return me.get_setting("bzgold-silver")
-end
-
 function me.catalysis() 
   return me.get_setting("bzgold-catalysis")
 end
