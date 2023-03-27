@@ -18,9 +18,7 @@ else
   util.add_prerequisite("advanced-material-processing-2", "temperature-regulation")
 end
 
-if mods.bzsilicon then
-  util.add_unlock("advanced-electronics-2", "cpu")
-end
+util.add_unlock("advanced-electronics-2", "cpu")
 util.add_unlock("advanced-electronics-2", "mainboard")
 
 util.add_prerequisite("coal-liquefaction", "catalysis")
