@@ -41,4 +41,5 @@ Many other mods are compatible but not yet fully supported. Suggestions always a
 [GeneralTank](https://mods.factorio.com/user/GeneralTank), 
 [JonathanF](https://mods.factorio.com/user/JonathanF), 
 [Berkelear](https://mods.factorio.com/user/Berkelear), 
-[Elanu](https://mods.factorio.com/user/elanu) 
+[Elanu](https://mods.factorio.com/user/elanu),
+[aeosynth](https://mods.factorio.com/user/aeosynth)
