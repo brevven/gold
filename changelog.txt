@@ -8,6 +8,7 @@ Date: 2023-03-27
   Changes:
     - Tweak silver wire icon
     - Tweak electronic circuit recipe icons
+    - When used with Bob's electronics, provide alternate basic electronic components recipe
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.8
 Date: 2023-03-27
