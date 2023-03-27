@@ -1048,6 +1048,13 @@ function util.add_icon(recipe_name, icon, options)
           icon_size=data.raw.item[data.raw.recipe[recipe_name].result].icon_size,
           icon_mipmaps=data.raw.item[data.raw.recipe[recipe_name].result].icon_mipmaps,
         }}
+      elseif data.raw.recipe[recipe_name].normal and
+      data.raw.item[data.raw.recipe[recipe_name].normal.result] then
+        data.raw.recipe[recipe_name].icons = {{
+          icon=data.raw.item[data.raw.recipe[recipe_name].normal.result].icon,
+          icon_size=data.raw.item[data.raw.recipe[recipe_name].normal.result].icon_size,
+          icon_mipmaps=data.raw.item[data.raw.recipe[recipe_name].normal.result].icon_mipmaps,
+        }}
       end
       data.raw.recipe[recipe_name].icon = nil
       data.raw.recipe[recipe_name].icon_size = nil
