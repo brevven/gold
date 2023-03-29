@@ -16,6 +16,12 @@ if mods["space-exploration"] then
     util.add_product("se-core-fragment-omni", {type="item", name="gold-ore", amount=1, probability = util.me.core_mining()})
     util.add_product("se-core-fragment-omni", {type="item", name="rich-copper-ore", amount=2, probability = util.me.core_mining()})
   end
+
+
+  -- Set main product for solid fuel
+  util.set_main_product("catalyzed-solid-fuel-from-heavy-oil", "solid-fuel")
+  util.set_main_product("catalyzed-solid-fuel-from-light-oil", "solid-fuel")
+  util.set_main_product("catalyzed-solid-fuel-from-petroleum-gas", "solid-fuel")
 end
 
 -- these need to be in final fixes for one reason or another
