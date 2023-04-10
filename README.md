@@ -15,7 +15,7 @@ See changelog.txt
 
 
 ### Localization
-
+- [Klarkxy](https://github.com/klarkxy) (zh-CN)
 
 ### Testing
 - [Sakuro](https://mods.factorio.com/user/sakuro)
