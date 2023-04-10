@@ -1,6 +1,5 @@
 require("stacking")
 require("prototypes/electronic-circuit-final")
-require("modules")
 require("prototypes/oil-updates")
 require("compatibility/modmashsplintergold")
 require("compatibility/248k-final")
@@ -34,6 +33,8 @@ for i, entity in pairs(data.raw.furnace) do
     entity.result_inventory_size = 4
   end
 end
+
+require("modules")
 
 -- Must be last
 util.create_list()

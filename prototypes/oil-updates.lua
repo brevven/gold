@@ -46,6 +46,7 @@ for i, recipe_name in pairs(recipes_to_update) do
     for j, fluid in pairs({"heavy-oil", "light-oil", "petroleum-gas"}) do
       util.add_to_ingredient(recipe_name, fluid, 10)
     end
+    table.insert(util.me.recipes, new_name)
   end
 end
 end
