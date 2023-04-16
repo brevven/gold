@@ -10,6 +10,7 @@ if util.se6() then
   util.replace_ingredient("se-space-decontamination-facility", "processing-unit", "advanced-circuit", 20)
   util.replace_ingredient("se-space-supercomputer-1", "processing-unit", "advanced-circuit", 200)
   util.replace_ingredient("se-space-science-lab", "processing-unit", "advanced-circuit", 100)
+  util.replace_ingredient("se-empty-lifesupport-canister", "processing-unit", "advanced-circuit", 5)
 
   util.remove_prerequisite("se-meteor-defence", "advanced-electronics-2")
   util.add_prerequisite("se-meteor-defence", "se-rocket-science-pack")
