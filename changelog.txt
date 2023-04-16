@@ -1,7 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.14
 Date: 2023-04-16
+  Fixes:
+    - SE: Fix holmium cable mainboard recipe to use correct ingredients
   Changes:
+    - Processing unit recipe time has been further halved
+    - K2: Rare metals are now used in mainbord recipes, not processing units
     - SE: Lifesupport canisters no longer require processing units
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.13

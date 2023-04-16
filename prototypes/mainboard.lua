@@ -26,22 +26,6 @@ if not mods.bobelectronics then
   })
    
   if mods["space-exploration"] then
-    if mods.Krastorio2 then
-      mbi = {{"se-holmium-cable", 4}, {"advanced-circuit", 10}, {"gold-ingot", 1}}
-      mbo = {{"mainboard", 20}}
-    else
-      mbi = {{"se-holmium-cable", 2}, {"advanced-circuit", 10}, {"gold-ingot", 1}}
-      mbo = {{"mainboard", 20}}
-    end
-  end
-
-  if mods["space-exploration"] then
-    local mbo = {}
-    if mods.Krastorio2 then
-      mbo = {{"se-holmium-cable", 2}, {"advanced-circuit", 20}, {"gold-ingot", 1}}
-    else
-      mbo = {{"se-holmium-cable", 1}, {"advanced-circuit", 20}, {"gold-ingot", 1}}
-    end
     data:extend({
       {
         type = "recipe",
@@ -54,7 +38,7 @@ if not mods.bobelectronics then
         order = "d[mainboard]",
         enabled = false,
         energy_required = 5,
-        ingredients = mbo,
+        ingredients = {{"se-holmium-cable", 2}, {"advanced-circuit", 20}, {"gold-ingot", 1}},
         results = {{"mainboard", 20}},
       },
     })
@@ -63,9 +47,15 @@ if not mods.bobelectronics then
 
   if util.me.platinum() then
     util.add_ingredient("mainboard", "temperature-sensor", 10, {"force", true})
+    util.add_ingredient("mainboard-holmium", "temperature-sensor", 10, {"force", true})
   end
   if util.me.palladium() then
     util.add_ingredient("mainboard", "mlcc", 10, {"force", true})
+    util.add_ingredient("mainboard-holmium", "mlcc", 10, {"force", true})
+  end
+  if mods.Krastorio2 then
+    util.add_ingredient("mainboard", "rare-metals", 20, {"force", true})
+    util.add_ingredient("mainboard-holmium", "rare-metals", 20, {"force", true})
   end
 
 else
