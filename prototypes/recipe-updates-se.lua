@@ -14,6 +14,19 @@ if util.se6() then
 
   util.remove_prerequisite("se-meteor-defence", "advanced-electronics-2")
   util.add_prerequisite("se-meteor-defence", "se-rocket-science-pack")
+  util.set_tech_recipe("se-meteor-defence", {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"chemical-science-pack", 1},
+    {"se-rocket-science-pack", 1},
+  })
+  util.set_tech_recipe("se-energy-beam-defence", {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"chemical-science-pack", 1},
+    {"se-rocket-science-pack", 1},
+  })
+
 
 
   if util.me.silver() then
