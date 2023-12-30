@@ -4,6 +4,9 @@ Date: 2023-12-29
   Fixes:
     - Silver brazing alloy can now be handcrafted even when foundry is available.
       This addresses some awkward progressions.
+    - SE + K2 + Bob's: Fix some electronics recipes including silver alternates and circuit boards.
+      Unfortunately, this means "mainboard" items will end up deleted from savegames using all 3 of
+      those mods, as there's no good way to migrate them.
   Changes:
     - SE: Meteor/umbrella defense tech requires rocket science packs
     - Bob's: Merge CPU/CPUs items into one. (Might need further balancing or progression changes.)

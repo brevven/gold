@@ -3,8 +3,8 @@ local util = require("data-util");
 
 
 if util.me.silver() then
-  if mods.bobelectronics then
-    -- alternate electronic circuit recipe that uses silver
+  if mods.bobelectronics or mods.MDbobelectronics then
+    -- alternate electronic component recipe that uses silver
     local ec = futil.table.deepcopy(data.raw.recipe["basic-electronic-components"])
     ec.name = "basic-electronic-components-silver"
     data:extend({ec})

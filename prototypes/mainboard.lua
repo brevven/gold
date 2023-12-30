@@ -1,7 +1,7 @@
 local util = require("data-util");
 
 
-if not mods.bobelectronics then
+if not (mods.bobelectronics or mods.MDbobelectronics) then
 
   data:extend({
     {
