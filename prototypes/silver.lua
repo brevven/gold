@@ -103,7 +103,10 @@ if util.me.silver() then
     },
   })
 
-  util.set_to_founding("silver-brazing-alloy")
+  if mods.bzfoundry then
+    util.set_category("silver-brazing-alloy", "basic-founding")
+    util.set_subgroup("silver-brazing-alloy", "foundry-intermediate")
+  end
 
   local prereqs= mods.bzaluminum and {"copper-processing"} or {"automation"}
   data:extend({
