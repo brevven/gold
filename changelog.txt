@@ -3,6 +3,7 @@ Version: 0.0.15
 Date: 2023-12-29
   Changes:
     - SE: Meteor/umbrella defense tech requires rocket science packs
+    - Bob's: Merge CPU/CPUs items into one. (Might need further balancing or progression changes.)
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.14
 Date: 2023-04-16

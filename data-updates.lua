@@ -1,5 +1,6 @@
 require("prototypes/tech-updates")
 require("prototypes/processing-unit-updates")
+require("compatibility/bobelectronics")
 require("prototypes/recipe-updates")
 require("prototypes/recipe-updates-se")
 require("map-gen-preset-updates")
